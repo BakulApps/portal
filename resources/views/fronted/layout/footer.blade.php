@@ -1,5 +1,5 @@
 <footer class="footer-area">
-    <div class="footer-top bg-img default-overlay pt-130 pb-80" style="background-image:url({{asset('assets/img/bg/bg-4.jpg')}});">
+    <div class="footer-top bg-img default-overlay pt-130 pb-80" style="background-image:url({{asset('assets/fronted/img/bg/bg-4.jpg')}});">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">
@@ -33,7 +33,7 @@
                         </div>
                         <div class="footer-list">
                             <ul>
-                                <li><a href="index.php">Beranda</a></li>
+                                <li><a href="{{route('home')}}">Beranda</a></li>
                                 <li><a href="#">Profil</a></li>
                                 <li><a href="#">Jenjang</a></li>
                                 <li><a href="#">Pendaftaran</a></li>
@@ -65,10 +65,10 @@
                         </div>
                         <div class="footer-gallery">
                             <ul>
-                                <li><a href="#"><img src="{{asset('assets/img/gallery/gallery-1.png')}}" alt=""></a></li>
-                                <li><a href="#"><img src="{{asset('assets/img/gallery/gallery-2.png')}}" alt=""></a></li>
-                                <li><a href="#"><img src="{{asset('assets/img/gallery/gallery-3.png')}}" alt=""></a></li>
-                                <li><a href="#"><img src="{{asset('assets/img/gallery/gallery-4.png')}}" alt=""></a></li>
+                                <li><a href="#"><img src="{{asset('assets/fronted/img/gallery/gallery-1.png')}}" alt=""></a></li>
+                                <li><a href="#"><img src="{{asset('assets/fronted/img/gallery/gallery-2.png')}}" alt=""></a></li>
+                                <li><a href="#"><img src="{{asset('assets/fronted/img/gallery/gallery-3.png')}}" alt=""></a></li>
+                                <li><a href="#"><img src="{{asset('assets/fronted/img/gallery/gallery-4.png')}}" alt=""></a></li>
                             </ul>
                         </div>
                     </div>

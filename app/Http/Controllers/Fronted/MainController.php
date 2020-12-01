@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Fronted;
 
+use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Event;
 use App\Models\Message;
@@ -31,7 +32,7 @@ class MainController extends Controller
         $posts = Post::with('user')->with('comment')->limit(4)->orderBy('created_at')->get();
         $event = Event::where('event_date', '>', now())->limit(4)->get();
         $this->data = ['meta' => $meta, 'posts' => $posts, 'events' => $event];
-        return view('home', $this->data);
+        return view('fronted.home', $this->data);
     }
 
     public function article()
@@ -43,7 +44,7 @@ class MainController extends Controller
         ];
 
         $this->data['posts'] = Post::with('user')->with('comment')->orderBy('created_at', 'ASC')->paginate(9);
-        return view('blog', $this->data);
+        return view('fronted.blog', $this->data);
     }
 
     public function articledetail($id)
@@ -69,7 +70,7 @@ class MainController extends Controller
             'author' => $post->user->user_name
         ];
 
-        return view('blog_detail', $this->data);
+        return view('fronted.blog_detail', $this->data);
     }
 
     public function event()
@@ -82,7 +83,7 @@ class MainController extends Controller
                 'keyword' => 'portal, portal resmi, portal yayasan, portal yayasan darul hikmah, portal yayasan darul hikmah menganti, artikel, berita, acara, pengumuman'
             ]
         ];
-        return view('event', $this->data);
+        return view('fronted.event', $this->data);
     }
 
     public function eventdetail($id)
@@ -95,7 +96,7 @@ class MainController extends Controller
             'keyword' => 'portal, portal resmi, portal yayasan, portal yayasan darul hikmah, portal yayasan darul hikmah menganti, artikel, berita, acara, pengumuman'
         ];
         $this->data['event'] = $event;
-        return view('event_detail', $this->data);
+        return view('fronted.event_detail', $this->data);
     }
 
     public function category($id)
@@ -110,7 +111,7 @@ class MainController extends Controller
             ->where('post_category', $id)
             ->orderBy('created_at', 'ASC')
             ->paginate(9);
-        return view('blog', $this->data);
+        return view('fronted.blog', $this->data);
     }
 
     public function tag($id)
@@ -123,7 +124,7 @@ class MainController extends Controller
         $this->data['posts'] = Post::whereHas('tag', function ($q) use ($id){
             $q->where('entity__tags.tag_id', $id);
         })->paginate(9);
-        return view('blog', $this->data);
+        return view('fronted.blog', $this->data);
     }
 
     public function contact(Request $request)
@@ -137,20 +138,7 @@ class MainController extends Controller
             $message->save();
         }
         else {
-            return view('contact');
+            return view('fronted.contact');
         }
-    }
-
-    public function test()
-    {
-        $post = Post::with('tag')->find(1);
-        $test = $post->tag->pluck('tag_name');
-        $tag = '';
-        for ($i=0;$i<count($test);$i++){
-            $tag .= $test[$i] . ', ';
-        }
-        $tag = rtrim($tag, ", ");
-
-        return response()->json($tag);
     }
 }

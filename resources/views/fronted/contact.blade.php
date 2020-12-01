@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('fronted.layout.master')
 @section('content')
     <div class="contact-area pt-130 pb-130">
         <div class="container">
@@ -28,7 +28,7 @@
             </div>
         </div>
     </div>
-    <div class="contact-info-area bg-img pt-180 pb-140 default-overlay" style="background-image:url({{asset('assets/img/bg/contact-info.jpg')}});">
+    <div class="contact-info-area bg-img pt-180 pb-140 default-overlay" style="background-image:url({{asset('assets/fronted/img/bg/contact-info.jpg')}});">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-12">
@@ -65,13 +65,13 @@
     <div class="brand-logo-area pt-130 pb-130">
         <div class="container">
             <div class="brand-logo-active owl-carousel">
-                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/img/brand-logo/1.png')}}" alt=""></a></div>
-                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/img/brand-logo/2.png')}}" alt=""></a></div>
-                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/img/brand-logo/3.png')}}" alt=""></a></div>
-                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/img/brand-logo/4.png')}}" alt=""></a></div>
-                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/img/brand-logo/5.png')}}" alt=""></a></div>
-                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/img/brand-logo/6.png')}}" alt=""></a></div>
-                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/img/brand-logo/2.png')}}" alt=""></a></div>
+                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/1.png')}}" alt=""></a></div>
+                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/2.png')}}" alt=""></a></div>
+                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/3.png')}}" alt=""></a></div>
+                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/4.png')}}" alt=""></a></div>
+                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/5.png')}}" alt=""></a></div>
+                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/6.png')}}" alt=""></a></div>
+                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/2.png')}}" alt=""></a></div>
             </div>
         </div>
     </div>
@@ -269,7 +269,7 @@
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(40.709896, -73.995481),
                 map: map,
-                icon: 'assets/img/icon/2.png',
+                icon: 'assets/fronted/img/icon/2.png',
                 animation:google.maps.Animation.BOUNCE,
                 title: 'Snazzy!'
             });

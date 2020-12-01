@@ -28,7 +28,7 @@
                 <div class="col-lg-2 col-md-6 col-4">
                     <div class="logo">
                         <a href="{{route('home')}}">
-                            <img alt="" src="{{asset('assets/img/logo/logo.png')}}" style="width: 200px">
+                            <img alt="" src="{{asset('assets/fronted/img/logo/logo.png')}}" style="width: 200px">
                         </a>
                     </div>
                 </div>
@@ -56,7 +56,6 @@
                                             <li><a target="_blank" href="https://ponpes.darul-hikmah.sch.id">PONDOK PESANTREN</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="{{route('announcement')}}"> PENGUMUMAN </a></li>
                                     <li><a href="{{route('event')}}"> ACARA </a></li>
                                     <li><a href="{{route('article')}}"> BERITA </a></li>
                                     <li><a href="{{route('contact')}}"> KONTAK </a></li>
@@ -89,7 +88,6 @@
                                     <li><a target="_blank" href="https://ponpes.darul-hikmah.sch.id">PONDOK PESANTREN</a></li>
                                 </ul>
                             </li>
-                            <li><a href="{{route('announcement')}}"> PENGUMUMAN </a></li>
                             <li><a href="{{route('event')}}"> ACARA </a></li>
                             <li><a href="{{route('article')}}"> BERITA </a></li>
                             <li><a href="{{route('contact')}}"> KONTAK </a></li>

@@ -1,13 +1,13 @@
-@extends('layout.master')
+@extends('fronted.layout.master')
 @section('content')
-    @include('layout.slider')
+    @include('fronted.layout.slider')
     <div class="choose-us section-padding-1">
         <div class="container-fluid">
             <div class="row no-gutters choose-negative-mrg">
                 <div class="col-lg-3 col-md-6">
                     <div class="single-choose-us choose-bg-light-blue">
                         <div class="choose-img">
-                            <img class="animated" src="{{asset('assets/img/icon/brain.png')}}" alt="">
+                            <img class="animated" src="{{asset('assets/fronted/img/icon/brain.png')}}" alt="">
                         </div>
                         <div class="choose-content">
                             <h3>Integritas</h3>
@@ -18,7 +18,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="single-choose-us choose-bg-yellow">
                         <div class="choose-img">
-                            <img class="animated" src="{{asset('assets/img/icon/education.png')}}" alt="">
+                            <img class="animated" src="{{asset('assets/fronted/img/icon/education.png')}}" alt="">
                         </div>
                         <div class="choose-content">
                             <h3>Profesionalitas</h3>
@@ -29,7 +29,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="single-choose-us choose-bg-blue">
                         <div class="choose-img">
-                            <img class="animated" src="{{asset('assets/img/icon/flasks.png')}}" alt="">
+                            <img class="animated" src="{{asset('assets/fronted/img/icon/flasks.png')}}" alt="">
                         </div>
                         <div class="choose-content">
                             <h3>Inovasi</h3>
@@ -40,7 +40,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="single-choose-us choose-bg-green">
                         <div class="choose-img">
-                            <img class="animated" src="{{asset('assets/img/icon/responsibility.png')}}" alt="">
+                            <img class="animated" src="{{asset('assets/fronted/img/icon/responsibility.png')}}" alt="">
                         </div>
                         <div class="choose-content">
                             <h3>Tanggung Jawab</h3>
@@ -77,16 +77,16 @@
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="about-img default-overlay">
-                        <img src="{{asset('assets/img/banner/banner-1.png')}}" alt="">
+                        <img src="{{asset('assets/fronted/img/banner/banner-1.png')}}" alt="">
                         <a class="video-btn video-popup" href="https://www.youtube.com/watch?v=UUsyhDhEwtA">
-                            <img class="animated" src="{{asset('assets/img/icon/video.png')}}" alt="">
+                            <img class="animated" src="{{asset('assets/fronted/img/icon/video.png')}}" alt="">
                         </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="course-area bg-img pt-130 pb-10" style="background-image:url({{asset('assets/img/bg/bg-1.jpg')}});">
+    <div class="course-area bg-img pt-130 pb-10" style="background-image:url({{asset('assets/fronted/img/bg/bg-1.jpg')}});">
         <div class="container">
             <div class="section-title mb-75">
                 <h2> <span>Jenjang</span> Pendidikan</h2>
@@ -98,7 +98,7 @@
             <div class="course-slider-active nav-style-1 owl-carousel">
                 <div class="single-course">
                     <div class="course-img">
-                        <a href="#"><img class="animated" src="{{asset('assets/img/course/course-2.jpg')}}" alt=""></a>
+                        <a href="#"><img class="animated" src="{{asset('assets/fronted/img/course/course-2.jpg')}}" alt=""></a>
                         <span>RA</span>
                     </div>
                     <div class="course-content">
@@ -113,7 +113,7 @@
                 </div>
                 <div class="single-course">
                     <div class="course-img">
-                        <a href="#"><img class="animated" src="{{asset('assets/img/course/course-3.jpg')}}" alt=""></a>
+                        <a href="#"><img class="animated" src="{{asset('assets/fronted/img/course/course-3.jpg')}}" alt=""></a>
                         <span>MI</span>
                     </div>
                     <div class="course-content">
@@ -128,7 +128,7 @@
                 </div>
                 <div class="single-course">
                     <div class="course-img">
-                        <a href="#"><img class="animated" src="{{asset('assets/img/course/course-4.jpg')}}" alt=""></a>
+                        <a href="#"><img class="animated" src="{{asset('assets/fronted/img/course/course-4.jpg')}}" alt=""></a>
                         <span>MTs</span>
                     </div>
                     <div class="course-content">
@@ -143,7 +143,7 @@
                 </div>
                 <div class="single-course">
                     <div class="course-img">
-                        <a href="#"><img class="animated" src="{{asset('assets/img/course/course-5.jpg')}}" alt=""></a>
+                        <a href="#"><img class="animated" src="{{asset('assets/fronted/img/course/course-5.jpg')}}" alt=""></a>
                         <span>MA</span>
                     </div>
                     <div class="course-content">
@@ -158,7 +158,7 @@
                 </div>
                 <div class="single-course">
                     <div class="course-img">
-                        <a href="#"><img class="animated" src="{{asset('assets/img/course/course-6.jpg')}}" alt=""></a>
+                        <a href="#"><img class="animated" src="{{asset('assets/fronted/img/course/course-6.jpg')}}" alt=""></a>
                         <span>Pondok</span>
                     </div>
                     <div class="course-content">
@@ -184,7 +184,7 @@
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                     <div class="single-count mb-30 count-one">
                         <div class="count-img">
-                            <img src="{{asset('assets/img/icon/graduated.png')}}" alt="">
+                            <img src="{{asset('assets/fronted/img/icon/graduated.png')}}" alt="">
                         </div>
                         <div class="count-content">
                             <h2 class="count">2489</h2>
@@ -195,7 +195,7 @@
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                     <div class="single-count mb-30 count-two">
                         <div class="count-img">
-                            <img src="{{asset('assets/img/icon/coaching.png')}}" alt="">
+                            <img src="{{asset('assets/fronted/img/icon/coaching.png')}}" alt="">
                         </div>
                         <div class="count-content">
                             <h2 class="count">270</h2>
@@ -206,7 +206,7 @@
                 <div class="col-xl-4 col-lg-3 col-md-6 col-sm-6">
                     <div class="single-count mb-30 count-three">
                         <div class="count-img">
-                            <img src="{{asset('assets/img/icon/trophy.png')}}" alt="">
+                            <img src="{{asset('assets/fronted/img/icon/trophy.png')}}" alt="">
                         </div>
                         <div class="count-content">
                             <h2 class="count">476</h2>
@@ -217,7 +217,7 @@
                 <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6">
                     <div class="single-count mb-30 count-four">
                         <div class="count-img">
-                            <img src="{{asset('assets/img/icon/open-book.png')}}" alt="">
+                            <img src="{{asset('assets/fronted/img/icon/open-book.png')}}" alt="">
                         </div>
                         <div class="count-content">
                             <h2 class="count">76</h2>
@@ -230,11 +230,11 @@
                 <div class="testimonial-text-slider">
                     <div class="testi-content-wrap">
                         <div class="testi-big-img">
-                            <img alt="" src="{{asset('assets/img/testimonial/testi-b1.jpg')}}">
+                            <img alt="" src="{{asset('assets/fronted/img/testimonial/testi-b1.jpg')}}">
                         </div>
                         <div class="row no-gutters">
                             <div class="ml-auto col-lg-6 col-md-12">
-                                <div class="testi-content bg-img default-overlay" style="background-image:url({{asset('assets/img/bg/testi.png')}});">
+                                <div class="testi-content bg-img default-overlay" style="background-image:url({{asset('assets/fronted/img/bg/testi.png')}});">
                                     <div class="quote-style quote-left">
                                         <i class="fa fa-quote-left"></i>
                                     </div>
@@ -251,7 +251,7 @@
                                         <i class="fa fa-quote-right"></i>
                                     </div>
                                     <div class="testi-arrow">
-                                        <img alt="" src="{{asset('assets/img/icon/testi-icon.png')}}">
+                                        <img alt="" src="{{asset('assets/fronted/img/icon/testi-icon.png')}}">
                                     </div>
                                 </div>
                             </div>
@@ -259,11 +259,11 @@
                     </div>
                     <div class="testi-content-wrap">
                         <div class="testi-big-img">
-                            <img alt="" src="{{asset('assets/img/testimonial/testi-b2.jpg')}}">
+                            <img alt="" src="{{asset('assets/fronted/img/testimonial/testi-b2.jpg')}}">
                         </div>
                         <div class="row no-gutters">
                             <div class="ml-auto col-lg-6 col-md-12">
-                                <div class="testi-content bg-img default-overlay" style="background-image:url({{asset('assets/img/bg/testi.png')}});">
+                                <div class="testi-content bg-img default-overlay" style="background-image:url({{asset('assets/fronted/img/bg/testi.png')}});">
                                     <div class="quote-style quote-left">
                                         <i class="fa fa-quote-left"></i>
                                     </div>
@@ -280,7 +280,7 @@
                                         <i class="fa fa-quote-right"></i>
                                     </div>
                                     <div class="testi-arrow">
-                                        <img alt="" src="{{asset('assets/img/icon/testi-icon.png')}}">
+                                        <img alt="" src="{{asset('assets/fronted/img/icon/testi-icon.png')}}">
                                     </div>
                                 </div>
                             </div>
@@ -288,11 +288,11 @@
                     </div>
                     <div class="testi-content-wrap">
                         <div class="testi-big-img">
-                            <img alt="" src="{{asset('assets/img/testimonial/testi-b3.jpg')}}">
+                            <img alt="" src="{{asset('assets/fronted/img/testimonial/testi-b3.jpg')}}">
                         </div>
                         <div class="row no-gutters">
                             <div class="ml-auto col-lg-6 col-md-12">
-                                <div class="testi-content bg-img default-overlay" style="background-image:url({{asset('assets/img/bg/testi.png')}});">
+                                <div class="testi-content bg-img default-overlay" style="background-image:url({{asset('assets/fronted/img/bg/testi.png')}});">
                                     <div class="quote-style quote-left">
                                         <i class="fa fa-quote-left"></i>
                                     </div>
@@ -309,7 +309,7 @@
                                         <i class="fa fa-quote-right"></i>
                                     </div>
                                     <div class="testi-arrow">
-                                        <img alt="" src="{{asset('assets/img/icon/testi-icon.png')}}">
+                                        <img alt="" src="{{asset('assets/fronted/img/icon/testi-icon.png')}}">
                                     </div>
                                 </div>
                             </div>
@@ -318,19 +318,19 @@
                 </div>
                 <div class="testimonial-image-slider">
                     <div class="sin-testi-image">
-                        <img src="{{asset('assets/img/testimonial/testi-b1.jpg')}}" alt="">
+                        <img src="{{asset('assets/fronted/img/testimonial/testi-b1.jpg')}}" alt="">
                     </div>
                     <div class="sin-testi-image">
-                        <img src="{{asset('assets/img/testimonial/testi-b2.jpg')}}" alt="">
+                        <img src="{{asset('assets/fronted/img/testimonial/testi-b2.jpg')}}" alt="">
                     </div>
                     <div class="sin-testi-image">
-                        <img src="{{asset('assets/img/testimonial/testi-b3.jpg')}}" alt="">
+                        <img src="{{asset('assets/fronted/img/testimonial/testi-b3.jpg')}}" alt="">
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="register-area bg-img pt-130 pb-130" style="background-image:url({{asset('assets/img/bg/bg-2.jpg')}});">
+    <div class="register-area bg-img pt-130 pb-130" style="background-image:url({{asset('assets/fronted/img/bg/bg-2.jpg')}});">
         <div class="container">
             <div class="section-title-2 mb-75 white-text">
                 <h2>Daftar <span>Sekarang</span></h2>
@@ -339,7 +339,7 @@
             <div class="register-wrap">
                 <div id="register-3" class="mouse-bg">
                     <div class="winter-banner">
-                        <img src="{{asset('assets/img/banner/regi-1.png')}}" alt="">
+                        <img src="{{asset('assets/fronted/img/banner/regi-1.png')}}" alt="">
                         <div class="winter-content">
                             <span>TAHUN PELAJARAN </span>
                             <h3>20/21</h3>
@@ -399,7 +399,7 @@
                 <div class="custom-col-5">
                     <div class="single-teacher mb-30">
                         <div class="teacher-img">
-                            <img src="{{asset('assets/img/teacher/teacher-1.jpg')}}" alt="">
+                            <img src="{{asset('assets/fronted/img/teacher/teacher-1.jpg')}}" alt="">
                         </div>
                         <div class="teacher-content-visible">
                             <h4>Sholihin</h4>
@@ -425,7 +425,7 @@
                 <div class="custom-col-5">
                     <div class="single-teacher mb-30">
                         <div class="teacher-img">
-                            <img src="{{asset('assets/img/teacher/teacher-2.jpg')}}" alt="">
+                            <img src="{{asset('assets/fronted/img/teacher/teacher-2.jpg')}}" alt="">
                         </div>
                         <div class="teacher-content-visible">
                             <h4>Finayanti</h4>
@@ -451,7 +451,7 @@
                 <div class="custom-col-5">
                     <div class="single-teacher mb-30">
                         <div class="teacher-img">
-                            <img src="{{asset('assets/img/teacher/teacher-3.jpg')}}" alt="">
+                            <img src="{{asset('assets/fronted/img/teacher/teacher-3.jpg')}}" alt="">
                         </div>
                         <div class="teacher-content-visible">
                             <h4>Naili</h4>
@@ -477,7 +477,7 @@
                 <div class="custom-col-5">
                     <div class="single-teacher mb-30">
                         <div class="teacher-img">
-                            <img src="{{asset('assets/img/teacher/teacher-4.jpg')}}" alt="">
+                            <img src="{{asset('assets/fronted/img/teacher/teacher-4.jpg')}}" alt="">
                         </div>
                         <div class="teacher-content-visible">
                             <h4>Zahri</h4>
@@ -503,7 +503,7 @@
                 <div class="custom-col-5">
                     <div class="single-teacher mb-30">
                         <div class="teacher-img">
-                            <img src="{{asset('assets/img/teacher/teacher-5.jpg')}}" alt="">
+                            <img src="{{asset('assets/fronted/img/teacher/teacher-5.jpg')}}" alt="">
                         </div>
                         <div class="teacher-content-visible">
                             <h4>Shima</h4>
@@ -529,7 +529,7 @@
             </div>
         </div>
     </div>
-    <div class="event-area bg-img default-overlay pt-130 pb-130" style="background-image:url({{asset('assets/img/bg/bg-3.jpg')}});">
+    <div class="event-area bg-img default-overlay pt-130 pb-130" style="background-image:url({{asset('assets/fronted/img/bg/bg-3.jpg')}});">
         <div class="container">
             <div class="section-title mb-75">
                 <h2><span>Agenda</span> Mendatang</h2>
@@ -540,7 +540,7 @@
                 <div class="single-event event-white-bg">
                     <div class="event-img">
                         <a href="{{route('event.detail', $event->event_id)}}">
-                            <img src="{{asset($event->event_image == null ? 'assets/img/event/event.jpg' : $event->event_image)}}" alt="">
+                            <img src="{{asset($event->event_image == null ? 'assets/fronted/img/event/event.jpg' : $event->event_image)}}" alt="">
                         </a>
                         <div class="event-date-wrap">
                             <span class="event-date">{{\Carbon\Carbon::parse($event->event_date)->formatLocalized('%I')}}</span>
@@ -578,7 +578,7 @@
                     <div class="single-blog mb-30">
                         <div class="blog-img">
                             <a href="{{route('article.detail', $post->post_id)}}">
-                                <img src="{{asset($post->post_image == null ? 'assets/img/blog/blog-1.jpg' : $post->post_image)}}" alt="">
+                                <img src="{{asset($post->post_image == null ? 'assets/fronted/img/blog/blog-1.jpg' : $post->post_image)}}" alt="">
                             </a>
                         </div>
                         <div class="blog-content-wrap">

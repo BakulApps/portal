@@ -21,7 +21,7 @@ class EventFactory extends Factory
      */
     public function definition()
     {
-        $galery = ['assets/img/event/event-gallery-1.jpg', 'assets/img/event/event-gallery-2.jpg'];
+        $galery = ['assets/fronted/img/event/event-gallery-1.jpg', 'assets/fronted/img/event/event-gallery-2.jpg'];
         return [
             'event_image'   => null,
             'event_name'    => $this->faker->sentence,

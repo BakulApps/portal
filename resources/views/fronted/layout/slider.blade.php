@@ -1,6 +1,6 @@
 <div class="slider-area">
     <div class="slider-active owl-carousel">
-        <div class="single-slider slider-height-1 bg-img" style="background-image:url({{asset('assets/img/slider/slider-1.jpg')}});">
+        <div class="single-slider slider-height-1 bg-img" style="background-image:url({{asset('assets/fronted/img/slider/slider-1.jpg')}});">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -24,11 +24,11 @@
                     </div>
                 </div>
                 <div class="slider-single-img slider-animated-1">
-                    <img class="animated" src="{{asset('assets/img/slider/single-slide-1.png')}}" alt="">
+                    <img class="animated" src="{{asset('assets/fronted/img/slider/single-slide-1.png')}}" alt="">
                 </div>
             </div>
         </div>
-        <div class="single-slider slider-height-1 bg-img" style="background-image:url({{asset('assets/img/slider/slider-1.jpg')}});">
+        <div class="single-slider slider-height-1 bg-img" style="background-image:url({{asset('assets/fronted/img/slider/slider-1.jpg')}});">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-9 col-md-7 col-12 col-sm-12">
@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <div class="slider-single-img slider-animated-1">
-                    <img class="animated" src="assets/img/slider/single-slide-1.png" alt="">
+                    <img class="animated" src="assets/fronted/img/slider/single-slide-1.png" alt="">
                 </div>
             </div>
         </div>

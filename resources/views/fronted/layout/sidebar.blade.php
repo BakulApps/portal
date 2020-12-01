@@ -18,7 +18,7 @@
                 <div class="single-recent-post">
                     <div class="recent-post-img">
                         <a href="{{route('article.detail', $post->post_id)}}">
-                            <img src="{{asset($post->post_image == null ? 'assets/img/blog/blog-1.jpg' : $post->post_image)}}" alt="">
+                            <img src="{{asset($post->post_image == null ? 'assets/fronted/img/blog/blog-1.jpg' : $post->post_image)}}" alt="">
                         </a>
                     </div>
                     <div class="recent-post-content">
@@ -39,7 +39,7 @@
                     @foreach($category_sidebar as $category)
                     <li>
                         <a href="{{route('category', $category->category_id)}}">
-                            {{$category->category_name}} <span>{{$category->post->where('post_category', $category->category_id)->count()}}</span>
+                                {{$category->category_name}} <span>{{$category->post->where('post_category', $category->category_id)->count()}}</span>
                         </a>
                     </li>
                     @endforeach

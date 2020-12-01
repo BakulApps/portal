@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('fronted.layout.master')
 @section('content')
     <div class="event-area pt-130 pb-130">
         <div class="container">
@@ -8,7 +8,7 @@
                     <div class="single-event mb-55 event-gray-bg">
                         <div class="event-img">
                             <a href="{{route('event.detail', $event->event_id)}}">
-                                <img src="{{asset($event->event_image == null ? 'assets/img/event/event.jpg' : $event->event_image)}}" alt="">
+                                <img src="{{asset($event->event_image == null ? 'assets/fronted/img/event/event.jpg' : $event->event_image)}}" alt="">
                             </a>
                             <div class="event-date-wrap">
                                 <span class="event-date">{{\Carbon\Carbon::parse($event->event_date)->formatLocalized('%I')}}</span>
@@ -49,27 +49,13 @@
     <div class="brand-logo-area pb-130">
         <div class="container">
             <div class="brand-logo-active owl-carousel">
-                <div class="single-brand-logo">
-                    <a href="#"><img src="assets/img/brand-logo/1.png" alt=""></a>
-                </div>
-                <div class="single-brand-logo">
-                    <a href="#"><img src="assets/img/brand-logo/2.png" alt=""></a>
-                </div>
-                <div class="single-brand-logo">
-                    <a href="#"><img src="assets/img/brand-logo/3.png" alt=""></a>
-                </div>
-                <div class="single-brand-logo">
-                    <a href="#"><img src="assets/img/brand-logo/4.png" alt=""></a>
-                </div>
-                <div class="single-brand-logo">
-                    <a href="#"><img src="assets/img/brand-logo/5.png" alt=""></a>
-                </div>
-                <div class="single-brand-logo">
-                    <a href="#"><img src="assets/img/brand-logo/6.png" alt=""></a>
-                </div>
-                <div class="single-brand-logo">
-                    <a href="#"><img src="assets/img/brand-logo/2.png" alt=""></a>
-                </div>
+                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/1.png')}}" alt=""></a></div>
+                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/2.png')}}" alt=""></a></div>
+                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/3.png')}}" alt=""></a></div>
+                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/4.png')}}" alt=""></a></div>
+                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/5.png')}}" alt=""></a></div>
+                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/6.png')}}" alt=""></a></div>
+                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/2.png')}}" alt=""></a></div>
             </div>
         </div>
     </div>

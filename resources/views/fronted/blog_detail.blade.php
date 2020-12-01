@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('fronted.layout.master')
 @section('content')
     <div class="event-area pt-130 pb-130">
         <div class="container">
@@ -6,7 +6,7 @@
                 <div class="col-xl-9 col-lg-8">
                     <div class="blog-details-wrap mr-40">
                         <div class="blog-details-top">
-                            <img src="{{asset($post->post_image == null ? 'assets/img/blog/blog-details.jpg' : $post->post_image)}}" alt="">
+                            <img src="{{asset($post->post_image == null ? 'assets/fronted/img/blog/blog-details.jpg' : $post->post_image)}}" alt="">
                             <div class="blog-details-content-wrap">
                                 <div class="b-details-meta-wrap">
                                     <div class="b-details-meta">
@@ -47,7 +47,7 @@
                         </div>
                         <div class="blog-author mt-80">
                             <div class="author-img">
-                                <img src="{{asset($post->user->user_image == null ? 'assets/img/blog/author.jpg' : $post->user->user_image)}}" alt="">
+                                <img src="{{asset($post->user->user_image == null ? 'assets/fronted/img/blog/author.jpg' : $post->user->user_image)}}" alt="">
                             </div>
                             <div class="author-content">
                                 <div class="author-content-top">
@@ -75,7 +75,7 @@
                                 <div class="single-blog">
                                     <div class="blog-img">
                                         <a href="{{route('article.detail', $post_recent->post_id)}}">
-                                            <img src="{{asset($post_recent->post_image == null ? 'assets/img/blog/blog-1.jpg' : $post_recent->post_image)}}" alt="">
+                                            <img src="{{asset($post_recent->post_image == null ? 'assets/fronted/img/blog/blog-1.jpg' : $post_recent->post_image)}}" alt="">
                                         </a>
                                     </div>
                                     <div class="blog-content-wrap">
@@ -108,7 +108,7 @@
                                 @foreach($post->comment as $comment)
                                 <div class="single-blog-comment">
                                     <div class="blog-comment-img">
-                                        <img src="{{asset('assets/img/blog/blog-comment.jpg')}}" alt="">
+                                        <img src="{{asset('assets/fronted/img/blog/blog-comment.jpg')}}" alt="">
                                     </div>
                                     <div class="blog-comment-content">
                                         <h5>{{$comment->comment_name}}</h5>
@@ -144,7 +144,7 @@
                         @endif
                     </div>
                 </div>
-                @include('layout.sidebar')
+                @include('fronted.layout.sidebar')
             </div>
         </div>
     </div>

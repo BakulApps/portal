@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('fronted.layout.master')
 @section('content')
     <div class="event-area pt-130 pb-130">
         <div class="container">
@@ -11,7 +11,7 @@
                                 <div class="single-blog mb-30">
                                     <div class="blog-img">
                                         <a href="{{route('article.detail', $post->post_id)}}">
-                                            <img src="{{asset($post->post_image == null ? 'assets/img/blog/blog-1.jpg' : $post->post_image)}}" alt="">
+                                            <img src="{{asset($post->post_image == null ? 'assets/fronted/img/blog/blog-1.jpg' : $post->post_image)}}" alt="">
                                         </a>
                                     </div>
                                     <div class="blog-content-wrap">
@@ -47,7 +47,7 @@
                         @endif
                     </div>
                 </div>
-                @include('layout.sidebar')
+                @include('fronted.layout.sidebar')
             </div>
         </div>
     </div>

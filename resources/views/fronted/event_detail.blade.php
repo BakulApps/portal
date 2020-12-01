@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('fronted.layout.master')
 @section('content')
     <div class="event-details-area pt-130">
         <div class="container">
@@ -37,7 +37,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <img src="{{asset($event->event_image == null ? 'assets/img/event/event-details.jpg' : $event->event_image)}}" alt="">
+                            <img src="{{asset($event->event_image == null ? 'assets/fronted/img/event/event-details.jpg' : $event->event_image)}}" alt="">
                             <h3>{{$event->event_name}}</h3>
                             <p>{{$event->event_content}}</p>
                             @if($event->event_galery != null)
@@ -57,34 +57,20 @@
                         </div>
                     </div>
                 </div>
-                @include('layout.sidebar')
+                @include('fronted.layout.sidebar')
             </div>
         </div>
     </div>
     <div class="brand-logo-area pt-130 pb-130">
         <div class="container">
             <div class="brand-logo-active owl-carousel">
-                <div class="single-brand-logo">
-                    <a href="#"><img src="{{asset('assets/img/brand-logo/1.png')}}" alt=""></a>
-                </div>
-                <div class="single-brand-logo">
-                    <a href="#"><img src="{{asset('assets/img/brand-logo/2.png')}}" alt=""></a>
-                </div>
-                <div class="single-brand-logo">
-                    <a href="#"><img src="{{asset('assets/img/brand-logo/3.png')}}" alt=""></a>
-                </div>
-                <div class="single-brand-logo">
-                    <a href="#"><img src="{{asset('assets/img/brand-logo/4.png')}}" alt=""></a>
-                </div>
-                <div class="single-brand-logo">
-                    <a href="#"><img src="{{asset('assets/img/brand-logo/5.png')}}" alt=""></a>
-                </div>
-                <div class="single-brand-logo">
-                    <a href="#"><img src="{{asset('assets/img/brand-logo/6.png')}}" alt=""></a>
-                </div>
-                <div class="single-brand-logo">
-                    <a href="#"><img src="{{asset('assets/img/brand-logo/2.png')}}" alt=""></a>
-                </div>
+                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/1.png')}}" alt=""></a></div>
+                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/2.png')}}" alt=""></a></div>
+                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/3.png')}}" alt=""></a></div>
+                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/4.png')}}" alt=""></a></div>
+                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/5.png')}}" alt=""></a></div>
+                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/6.png')}}" alt=""></a></div>
+                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/2.png')}}" alt=""></a></div>
             </div>
         </div>
     </div>
@@ -276,7 +262,7 @@
         var marker = new google.maps.Marker({
             position: new google.maps.LatLng(40.709896, -73.995481),
             map: map,
-            icon: 'assets/img/icon-img/2.png',
+            icon: '../../assets/fronted/img/icon/2.png',
             animation:google.maps.Animation.BOUNCE,
             title: 'Snazzy!'
         });

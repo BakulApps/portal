@@ -12,10 +12,10 @@
 
     <title>Portal Resmi Yayasan Darul Hikmah</title>
 
-    <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/icons.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/plugins.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/fronted/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/fronted/css/icons.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/fronted/css/plugins.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/fronted/css/style.css')}}">
 
-    <script src="{{asset('assets/js/vendor/modernizr-2.8.3.min.js')}}"></script>
+    <script src="{{asset('assets/fronted/js/vendor/modernizr-2.8.3.min.js')}}"></script>
 </head>
