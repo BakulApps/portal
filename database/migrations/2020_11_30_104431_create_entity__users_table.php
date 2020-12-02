@@ -19,11 +19,11 @@ class CreateEntityUsersTable extends Migration
             $table->string('user_fullname', 200);
             $table->string('user_name', 200);
             $table->string('user_pass');
+            $table->rememberToken();
             $table->mediumText('user_desc');
             $table->string('user_facebook');
             $table->string('user_instagram');
             $table->string('user_twitter');
-            $table->timestamps();
         });
     }
 

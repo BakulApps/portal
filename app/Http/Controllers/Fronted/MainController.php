@@ -43,7 +43,11 @@ class MainController extends Controller
             'keyword' => 'portal, portal resmi, portal yayasan, portal yayasan darul hikmah, portal yayasan darul hikmah menganti, artikel, berita, acara, pengumuman'
         ];
 
-        $this->data['posts'] = Post::with('user')->with('comment')->orderBy('created_at', 'ASC')->paginate(9);
+        $this->data['posts'] = Post::with('user')
+            ->with('comment')
+            ->where('post_status', 1)
+            ->orderBy('created_at', 'ASC')
+            ->paginate(9);
         return view('fronted.blog', $this->data);
     }
 

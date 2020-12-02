@@ -24,4 +24,9 @@ class Tag extends Model
             'post_id'
         );
     }
+
+    static function name($tag_id)
+    {
+        return self::where('tag_id', $tag_id)->value('tag_name');
+    }
 }

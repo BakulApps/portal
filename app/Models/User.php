@@ -16,6 +16,7 @@ class User extends Authenticatable
         'user_fullname',
         'user_name',
         'user_pass',
+        'remember_token',
         'user_desc',
         'user_facebook',
         'user_instagram',
@@ -25,4 +26,9 @@ class User extends Authenticatable
     protected $casts        = ['email_verified_at' => 'datetime',];
     protected $primaryKey   = 'user_id';
     public $timestamps      = false;
+
+    public function getAuthPassword()
+    {
+        return $this->user_pass;
+    }
 }

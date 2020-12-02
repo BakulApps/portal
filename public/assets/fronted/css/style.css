@@ -7194,6 +7194,12 @@ h3.cart-page-title {
     text-align: center;
 }
 
+@media screen and (max-width: 768px){
+    .top-button {
+        display: none;
+    }
+}
+
 .top-button .button {
     background-color: #00a651;
     color: #fff;

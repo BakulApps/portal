@@ -16,7 +16,7 @@ class CreateEntityTagsTable extends Migration
         Schema::create('entity__tags', function (Blueprint $table) {
             $table->id('tag_id');
             $table->string('tag_name', 20);
-            $table->mediumText('tag_desc');
+            $table->mediumText('tag_desc')->nullable();
         });
     }
 

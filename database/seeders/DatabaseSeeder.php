@@ -19,17 +19,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $tag        = Tag::factory(20)->create();
-        $category   = Category::factory(20)->create();
-        $post       = Post::factory(20)->create();
-        $comment    = Comment::factory(20)->create();
-        $user       = User::factory(20)->create();
-        $event      = Event::factory(20)->create();
+        //$tag        = Tag::factory(20)->create();
+        //$category   = Category::factory(20)->create();
+        //$post       = Post::factory(20)->create();
+        //$comment    = Comment::factory(20)->create();
+        $user       = User::factory(2)->create();
+        //$event      = Event::factory(20)->create();
 
-        $post->each(function ($post){
-            $post->tag()->attach(['post_id' => $post->post_id], ['tag_id' => 10]);
-            $post->comment()->attach(['post_id' => $post->post_id], ['comment_id' => 8]);
-        });
+        //$post->each(function ($post){
+        //    $post->tag()->attach(['post_id' => $post->post_id], ['tag_id' => 10]);
+        //    $post->comment()->attach(['post_id' => $post->post_id], ['comment_id' => 8]);
+        //});
 
 
     }

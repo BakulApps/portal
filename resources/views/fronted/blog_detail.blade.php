@@ -19,7 +19,7 @@
                                     <span>{{$post->category->category_name}}</span>
                                 </div>
                                 <h3>{{$post->post_title}}</h3>
-                                <p style="text-align: justify">{{$post->post_content}}</p>
+                                <p style="text-align: justify">{!! $post->post_content !!}</p>
                                 <div class="blog-share-tags">
                                     <div class="blog-share">
                                         <div class="blog-btn">

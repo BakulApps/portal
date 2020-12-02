@@ -11,7 +11,7 @@ class Post extends Model
     use HasFactory;
 
     protected $table        = 'entity__posts';
-    protected $fillable     = ['post_image', 'post_author', 'post_category', 'post_title', 'post_content'];
+    protected $fillable     = ['post_image', 'post_author', 'post_category', 'post_title', 'post_content', 'post_status'];
     protected $primaryKey   = 'post_id';
 
     public function tag()

@@ -21,6 +21,7 @@ class CreateEntityPostsTable extends Migration
             $table->string('post_title');
             $table->text('post_content');
             $table->boolean('post_comment');
+            $table->boolean('post_status');
             $table->timestamps();
         });
 

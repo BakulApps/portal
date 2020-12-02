@@ -21,5 +21,7 @@ Route::get('/acara/{id}/lihat', 'MainController@eventdetail')->name('event.detai
 Route::get('/kategori/{id}', 'MainController@category')->name('category');
 Route::get('/tag/{id}', 'MainController@tag')->name('tag');
 Route::match(['post', 'get'], '/kontak', 'MainController@contact')->name('contact');
+Route::match(['post', 'get'], '/masuk', 'AuthController@login')->name('login');
+Route::match(['post', 'get'], '/keluar', 'AuthController@logout')->name('logout');
 
 

@@ -26,8 +26,9 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string|null
      */
-    protected $namespace = 'App\\Http\\Controllers';
-    protected $namespace_fronted = 'App\\Http\\Controllers\\Fronted';
+    protected $namespace            = 'App\\Http\\Controllers';
+    protected $namespace_fronted    = 'App\\Http\\Controllers\\Fronted';
+    protected $namespace_portal     = 'App\\Http\\Controllers\\Portal';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -47,6 +48,11 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware('web')
                 ->namespace($this->namespace_fronted)
                 ->group(base_path('routes/web.php'));
+
+            Route::prefix('portal')
+                ->middleware(['web', 'auth.portal'])
+                ->namespace($this->namespace_portal)
+                ->group(base_path('routes/portal.php'));
         });
     }
 

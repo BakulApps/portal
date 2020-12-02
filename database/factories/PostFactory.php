@@ -27,7 +27,8 @@ class PostFactory extends Factory
             'post_category' => $this->faker->numberBetween(1, 10),
             'post_title'    => $this->faker->sentence,
             'post_content'  => $this->faker->paragraph(50),
-            'post_comment'  => $this->faker->boolean
+            'post_comment'  => $this->faker->boolean,
+            'post_status'   => $this->faker->boolean
 
         ];
     }
