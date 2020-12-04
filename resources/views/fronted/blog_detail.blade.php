@@ -11,7 +11,7 @@
                                 <div class="b-details-meta-wrap">
                                     <div class="b-details-meta">
                                         <ul>
-                                            <li><i class="fa fa-calendar-o"></i> {{$post->date}}</li>
+                                            <li><i class="fa fa-calendar-o"></i> {{$post->created_at()}}</li>
                                             <li><i class="fa fa-user"></i> {{$post->user->user_name}}</li>
                                             <li><i class="fa fa-comments-o"></i> {{$post->comment->count()}}</li>
                                         </ul>
@@ -19,7 +19,7 @@
                                     <span>{{$post->category->category_name}}</span>
                                 </div>
                                 <h3>{{$post->post_title}}</h3>
-                                <p style="text-align: justify">{!! $post->post_content !!}</p>
+                                {!! $post->post_content !!}
                                 <div class="blog-share-tags">
                                     <div class="blog-share">
                                         <div class="blog-btn">
@@ -82,7 +82,7 @@
                                         <span>{{\App\Models\Category::name($post_recent->post_category)}}</span>
                                         <div class="blog-content">
                                             <h4><a href="{{route('article.detail', $post_recent->post_id)}}">{{$post_recent->post_title}}</a></h4>
-                                            <p>{{substr($post_recent->post_content, 0, 90)}}</p>
+                                            {!! substr($post_recent->post_content, 0, 200) !!}
                                             <div class="blog-meta">
                                                 <ul>
                                                     <li><a href="#"><i class="fa fa-user"></i>{{$post_recent->user->user_name}}</a></li>
@@ -91,14 +91,14 @@
                                             </div>
                                         </div>
                                         <div class="blog-date">
-                                            <a href="#"><i class="fa fa-calendar-o"></i> {{\Carbon\Carbon::parse($post_recent->created_at)->formatLocalized('%I %b %Y')}}</a>
+                                            <a href="#"><i class="fa fa-calendar-o"></i> {{$post->created_at()}}</a>
                                         </div>
                                     </div>
                                 </div>
                                 @endforeach
                             </div>
                         </div>
-                        @if($post->post_commennt == 1)
+                        @if($post->post_comment == 1)
                         <div class="blog-comment">
                             <div class="blog-comment-btn mb-80 commrnt-toggle">
                                 <a href="#">LIHAT KOMENTAR</a>
@@ -112,30 +112,45 @@
                                     </div>
                                     <div class="blog-comment-content">
                                         <h5>{{$comment->comment_name}}</h5>
-                                        <p style="text-align: justify">{{$comment->comment_text}}</p>
+                                        <p style="text-align: justify">{{$comment->comment_content}}</p>
                                     </div>
                                 </div>
+                                @if(\App\Models\Comment::parent($comment->comment_id)->count() > 0)
+                                @php
+                                $parent = \App\Models\Comment::parent($comment->comment_id)->get()
+                                @endphp
+                                <div class="single-blog-comment child-comment">
+                                    <div class="blog-comment-img">
+                                        <img src="{{asset('assets/fronted/img/blog/blog-comment.jpg')}}" alt="">
+                                    </div>
+                                    <div class="blog-comment-content">
+                                        <h5>{{$parent[0]->comment_name}}</h5>
+                                        <p style="text-align: justify">{{$parent[0]->comment_content}}</p>
+                                    </div>
+                                </div>
+                                @endif
                                 @endforeach
                             </div>
                         </div>
                         <div class="leave-comment-area">
                             <h3>Tinggalkan Komentar</h3>
-                            <form>
+                            <form method="post" action="{{route('article.detail', $post->post_id)}}">
+                                @csrf
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="leave-form">
-                                            <input placeholder="Nama" type="text">
+                                            <input type="text" name="comment_name" placeholder="Nama">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="leave-form">
-                                            <input placeholder="E-Email" type="email">
+                                            <input type="email" name="comment_email" placeholder="Email" >
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="leave-form leave-btn">
-                                            <textarea placeholder="Pesan"></textarea>
-                                            <input type="submit" value="KIRIM">
+                                            <textarea name="comment_content" placeholder="Pesan"></textarea>
+                                            <input type="submit" name="submit" value="KIRIM">
                                         </div>
                                     </div>
                                 </div>

@@ -1,6 +1,5 @@
-var postedit = function () {
+var postcreate = function () {
     var csrf_token = {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')};
-
     var _componentSubmit = function () {
         $("#save").click(function () {
             var fd      = new FormData();
@@ -26,7 +25,7 @@ var postedit = function () {
 
             $.ajax({
                 headers: csrf_token,
-                url : baseurl + '/postingan/' + $('#post_id').val() + '/ubah',
+                url : baseurl + '/postingan/buat',
                 type: 'post',
                 dataType: 'json',
                 data: fd,
@@ -38,9 +37,6 @@ var postedit = function () {
                         text: resp['text'],
                         addclass: 'alert bg-'+resp['class']+' border-'+resp['class']+' alert-styled-left'
                     });
-                    setTimeout(function (){
-                        window.location.href = baseurl + '/postingan'
-                    }, 2000);
                 }
             })
         });
@@ -49,7 +45,7 @@ var postedit = function () {
             var files   = $('#post_image')[0].files[0];
             var comment = $('#post_comment:checked').val();
 
-            fd.append('_type', 'update');
+            fd.append('_type', 'create');
             fd.append('post_status', 1)
             if (files !== undefined){
 
@@ -68,7 +64,7 @@ var postedit = function () {
 
             $.ajax({
                 headers: csrf_token,
-                url : baseurl + '/postingan/' + $('#post_id').val() + '/ubah',
+                url : baseurl + '/postingan/buat',
                 type: 'post',
                 dataType: 'json',
                 data: fd,
@@ -80,9 +76,6 @@ var postedit = function () {
                         text: resp['text'],
                         addclass: 'alert bg-'+resp['class']+' border-'+resp['class']+' alert-styled-left'
                     });
-                    setTimeout(function (){
-                        window.location.href = baseurl + '/postingan'
-                    }, 2000);
                 }
             })
         });
@@ -146,6 +139,14 @@ var postedit = function () {
 
     var _componentEditor = function () {
         $('#post_content').summernote({
+            toolbar: [
+                ['style', ['bold', 'italic', 'underline']],
+                ['fontsize', ['fontsize']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table'],
+                ['link', ['link', 'picture']]
+            ],
             tabsize: 1,
             height: 400
         });
@@ -191,5 +192,5 @@ var postedit = function () {
 }();
 
 document.addEventListener('DOMContentLoaded', function() {
-    postedit.init();
+    postcreate.init();
 });

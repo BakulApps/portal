@@ -24,7 +24,8 @@ class CommentFactory extends Factory
         return [
             'comment_name' => $this->faker->lastName,
             'comment_email' => $this->faker->email,
-            'comment_text'  => $this->faker->paragraph(8)
+            'comment_content'  => $this->faker->paragraph(8),
+            'comment_read'      => $this->faker->boolean
         ];
     }
 }

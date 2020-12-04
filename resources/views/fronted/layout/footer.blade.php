@@ -12,11 +12,11 @@
                             <div class="f-contact-info">
                                 <div class="single-f-contact-info">
                                     <i class="fa fa-building"></i>
-                                    <span>Menganti, Kedung Jepara</span>
+                                    <span>Menganti, Kedung, Jepara</span>
                                 </div>
                                 <div class="single-f-contact-info">
                                     <i class="fa fa-envelope-o"></i>
-                                    <span><a href="#">info@darul-hikmah.sch.id</a></span>
+                                    <span><a href="mailto:info@darul-hikmah.sch.id">info@darul-hikmah.sch.id</a></span>
                                 </div>
                                 <div class="single-f-contact-info">
                                     <i class="fa fa-phone"></i>
@@ -34,7 +34,7 @@
                         <div class="footer-list">
                             <ul>
                                 <li><a href="{{route('home')}}">Beranda</a></li>
-                                <li><a href="#">Profil</a></li>
+                                <li><a href="{#">Profil</a></li>
                                 <li><a href="#">Jenjang</a></li>
                                 <li><a href="#">Pendaftaran</a></li>
                                 <li><a href="#">Syarat & Ketentuan</a></li>
@@ -49,11 +49,11 @@
                         </div>
                         <div class="footer-list">
                             <ul>
-                                <li><a href="#">PAUD & RA </a></li>
-                                <li><a href="#">Madrasah Ibtidaiyah</a></li>
-                                <li><a href="#">Madrasah Tsanawiyah</a></li>
-                                <li><a href="#">Madrasah Aliyah</a></li>
-                                <li><a href="#">Pondok Pesantren</a></li>
+                                <li><a href="https://paudra.darul-hikmah.sch.id">PAUD & RA </a></li>
+                                <li><a href="https://mi.darul-hikmah.sch.id">Madrasah Ibtidaiyah</a></li>
+                                <li><a href="https://mts.darul-hikmah.sch.id">Madrasah Tsanawiyah</a></li>
+                                <li><a href="https://ma.darul-hikmah.sch.id">Madrasah Aliyah</a></li>
+                                <li><a href="https://ponpes.darul-hikmah.sch.id">Pondok Pesantren</a></li>
                             </ul>
                         </div>
                     </div>

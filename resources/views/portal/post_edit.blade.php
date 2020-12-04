@@ -22,16 +22,18 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header bg-white header-elements-inline">
-                            <h6 class="card-title font-weight-semibold">TAMBAH POSTINGAN</h6>
+                            <h6 class="card-title font-weight-semibold">UBAH POSTINGAN</h6>
                         </div>
                         <div class="card-body">
+                            <input type="hidden" id="post_id" value="{{$post->post_id}}">
                             <div class="form-group">
                                 <input type="text" class="form-control" id="post_title" value="{{$post->post_title}}">
                             </div>
                             <div id="post_content">{!! $post->post_content !!}</div>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input-styled-primary" id="post_comment" value="1" {{$post->post_comment == 1 ? 'checked' : null}}data-fouc>
+                                    <input type="checkbox" class="form-check-input-styled-primary" id="post_comment"
+                                           value="1" {{$post->post_comment == 1 ? 'checked' : null}} data-fouc>
                                     Komentar
                                 </label>
                             </div>
@@ -50,7 +52,7 @@
                         <div class="card-body">
                             <p>Penulis : {{$post->user->user_name}}</p>
                             <p>Visibilitas : Publik</p>
-                            <p>Tanggal : {{\Carbon\Carbon::parse($post->post_created_at)->formatLocalized('%d %B %Y')}}</p>
+                            <p>Tanggal : {{$post->created_at('d F Y')}}</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <button type="button" class="btn btn-sm bg-info" id="save" value="save">SIMPAN</button>
                                 <button type="button" class="btn btn-sm bg-success" id="publish" value="publish">TERBIT</button>

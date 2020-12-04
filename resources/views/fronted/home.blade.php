@@ -574,31 +574,31 @@
             </div>
             <div class="row">
                 @foreach($posts as $post)
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-blog mb-30">
-                        <div class="blog-img">
-                            <a href="{{route('article.detail', $post->post_id)}}">
-                                <img src="{{asset($post->post_image == null ? 'assets/fronted/img/blog/blog-1.jpg' : $post->post_image)}}" alt="">
-                            </a>
-                        </div>
-                        <div class="blog-content-wrap">
-                            <span>{{\App\Models\Category::name($post->post_category)}}</span>
-                            <div class="blog-content">
-                                <h4><a href="{{route('article.detail', $post->post_id)}}">{{$post->post_title}}</a></h4>
-                                <p>{{substr($post->post_content, 0, 50)}}</p>
-                                <div class="blog-meta">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-user"></i> {{$post->user->user_name}}</a></li>
-                                        <li><a href="#"><i class="fa fa-comments-o"></i> {{$post->comment->count()}}</a></li>
-                                    </ul>
-                                </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-blog mb-30">
+                            <div class="blog-img">
+                                <a href="{{route('article.detail', $post->post_id)}}">
+                                    <img src="{{asset($post->post_image == null ? 'assets/fronted/img/blog/blog-1.jpg' : $post->post_image)}}" alt="">
+                                </a>
                             </div>
-                            <div class="blog-date">
-                                <a href="#"><i class="fa fa-calendar-o"></i> {{$post->created_at()}}</a>
+                            <div class="blog-content-wrap">
+                                <span>{{\App\Models\Category::name($post->post_category)}}</span>
+                                <div class="blog-content">
+                                    <h4><a href="{{route('article.detail', $post->post_id)}}">{{$post->post_title}}</a></h4>
+                                    {!! substr($post->post_content, 0, 200)!!}
+                                    <div class="blog-meta">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-user"></i> {{$post->user->user_name}}</a></li>
+                                            <li><a href="#"><i class="fa fa-comments-o"></i> {{$post->comment->count()}}</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="blog-date">
+                                    <a href="#"><i class="fa fa-calendar-o"></i> {{$post->created_at()}}</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
             </div>
         </div>

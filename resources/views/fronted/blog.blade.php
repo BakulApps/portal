@@ -18,7 +18,7 @@
                                         <span>{{\App\Models\Category::name($post->post_category)}}</span>
                                         <div class="blog-content">
                                             <h4><a href="{{route('article.detail', $post->post_id)}}">{{$post->post_title}}</a></h4>
-                                            <p>{{substr($post->post_content, 0, 50)}}</p>
+                                            {!! substr($post->post_content, 0, 200) !!}
                                             <div class="blog-meta">
                                                 <ul>
                                                     <li><a href="#"><i class="fa fa-user"></i>{{$post->user->user_name}}</a></li>
@@ -27,7 +27,7 @@
                                             </div>
                                         </div>
                                         <div class="blog-date">
-                                            <a href="#"><i class="fa fa-calendar-o"></i> {{\Carbon\Carbon::parse($post->created_at)->formatLocalized('%I %b %Y')}}</a>
+                                            <a href="#"><i class="fa fa-calendar-o"></i> {{$post->created_at()}}</a>
                                         </div>
                                     </div>
                                 </div>

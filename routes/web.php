@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'MainController@home')->name('home');
 Route::get('/artikel', 'MainController@article')->name('article');
-Route::get('/artikel/{id}/lihat', 'MainController@articledetail')->name('article.detail');
+Route::match(['get', 'post'],'/artikel/{id}/lihat', 'MainController@articledetail')->name('article.detail');
 Route::get('/acara', 'MainController@event')->name('event');
 Route::get('/acara/{id}/lihat', 'MainController@eventdetail')->name('event.detail');
 Route::get('/kategori/{id}', 'MainController@category')->name('category');

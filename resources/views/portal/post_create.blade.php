@@ -50,7 +50,7 @@
                         <div class="card-body">
                             <p>Penulis : {{auth('user')->user()->user_name}}</p>
                             <p>Visibilitas : Publik</p>
-                            <p>Tanggal : {{\Carbon\Carbon::now()->formatLocalized('%d %B %Y')}}</p>
+                            <p>Tanggal : {{\Carbon\Carbon::now()->translatedFormat('d F Y')}}</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <button type="button" class="btn btn-sm bg-info" id="save" value="save">SIMPAN</button>
                                 <button type="button" class="btn btn-sm bg-success" id="publish" value="publish">TERBIT</button>

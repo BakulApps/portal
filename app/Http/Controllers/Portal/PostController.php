@@ -38,7 +38,7 @@ class PostController extends Controller
                         if ($post->save()){
                             $tags = explode(',', $request->post_tag);
                             $post->tag()->attach($tags);
-                            $msg = ['title' => 'Berhasil !', 'class' => 'success', 'text' => 'Postingan Berhasil ditambahkan'];
+                            $msg = ['title' => 'Berhasil !', 'class' => 'success', 'text' => 'Postingan Berhasil ditambahkan, anda akan dialihkan kehalaman Postingan'];
                         }
                     }
                     catch (\Exception $e){
@@ -55,7 +55,39 @@ class PostController extends Controller
 
     public function edit(Request $request, $id){
         if ($request->isMethod('post')){
-
+            if ($request->_type == 'update'){
+                $validator = Validator::make($request->all(), [
+                    'post_image' => 'mimes:jpg,jpeg,png|max:512|nullable'
+                ]);
+                if ($validator->fails()) {
+                    $msg = ['title' => 'Kesalahan !', 'class' => 'danger', 'text' => 'Berkas Harus Berekstensi jpg, jpeg, png dan Ukuran maksimal 512 Kb'];
+                }
+                else {
+                    try {
+                        $post = Post::find($id);
+                        $post->tag()->detach();
+                        if ($request->hasFile('post_image')){
+                            $file = $request->file('post_image')->store('public/blog');
+                        }
+                        $post->post_image       = isset($file) ? asset('storage' . preg_replace("/public/", "", $file)) : $post->post_image;
+                        $post->post_author      = auth('user')->user()->user_id;
+                        $post->post_category    = $request->post_category;
+                        $post->post_title       = $request->post_title;
+                        $post->post_content     = $request->post_content;
+                        $post->post_comment     = $request->post_comment;
+                        $post->post_status      = $request->post_status;
+                        if ($post->save()){
+                            $tags = explode(',', $request->post_tag);
+                            $post->tag()->attach($tags);
+                            $msg = ['title' => 'Berhasil !', 'class' => 'success', 'text' => 'Postingan Berhasil diperbarui, anda akan dialihkan kehalaman Postingan'];
+                        }
+                    }
+                    catch (\Exception $e){
+                        $msg = ['title' => 'Gagal !', 'class' => 'danger', 'text' => $e->getMessage()];
+                    }
+                }
+            }
+            return response()->json($msg);
         }
         else {
             $post = Post::with('tag')

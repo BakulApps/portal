@@ -23,7 +23,7 @@ class PostFactory extends Factory
     {
         return [
             'post_image'    => null,
-            'post_author'   => $this->faker->numberBetween(1, 10),
+            'post_author'   => $this->faker->numberBetween(1, 2),
             'post_category' => $this->faker->numberBetween(1, 10),
             'post_title'    => $this->faker->sentence,
             'post_content'  => $this->faker->paragraph(50),

@@ -19,6 +19,7 @@ class CreateEntityMessagesTable extends Migration
             $table->string('message_email', 100);
             $table->string('message_subject', 100);
             $table->text('message_content');
+            $table->boolean('message_read');
             $table->timestamps();
         });
     }

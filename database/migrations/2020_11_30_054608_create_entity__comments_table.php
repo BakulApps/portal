@@ -15,9 +15,11 @@ class CreateEntityCommentsTable extends Migration
     {
         Schema::create('entity__comments', function (Blueprint $table) {
             $table->id('comment_id');
+            $table->integer('comment_parent')->nullable();
             $table->string('comment_name', 50);
-            $table->string('comment_email', 50);
-            $table->mediumText('comment_text');
+            $table->string('comment_email', 50)->nullable();
+            $table->mediumText('comment_content');
+            $table->boolean('comment_read');
             $table->timestamps();
         });
     }

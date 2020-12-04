@@ -52,8 +52,18 @@ class Post extends Model
         );
     }
 
-    public function created_at()
+    public function created_at($format = null)
     {
-        return Carbon::parse($this->created_at)->formatLocalized('%I %b %Y');
+        if ($format != null){
+            return Carbon::parse($this->created_at)->translatedFormat($format);
+        }
+        else {
+            return Carbon::parse($this->created_at)->translatedFormat('d M Y');
+        }
+    }
+
+    static function value($id, $coloumn)
+    {
+        return self::find($id)->value($coloumn);
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Fronted;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Event;
 use App\Models\Message;
 use App\Models\Post;
@@ -19,9 +20,10 @@ class MainController extends Controller
     {
         $categories     = Category::with('post')->limit(7)->get();
         $tags           = Tag::limit(10)->get();
-        $posts          = Post::limit(3)->orderBy('created_at')->get();
+        $posts          = Post::where('post_status', 1)->limit(3)->orderBy('created_at', 'DESC')->get();
         $this->data     = ['category_sidebar' => $categories, 'tags_sidebar' => $tags, 'posts_sidebar' => $posts];
     }
+
     public function home()
     {
         $meta   = [
@@ -29,7 +31,8 @@ class MainController extends Controller
             'desc'  => 'Portal Resmi Yayasan Darul Hikmah Menganti Kedung Jepara',
             'keyword' => 'portal, portal resmi, portal yayasan, portal yayasan darul hikmah, portal yayasan darul hikmah menganti'
             ];
-        $posts = Post::with('user')->with('comment')->limit(4)->orderBy('created_at')->get();
+        $posts = Post::with('user')->with('comment')->where('post_status', 1)
+            ->limit(4)->orderBy('created_at', 'DESC')->get();
         $event = Event::where('event_date', '>', now())->limit(4)->get();
         $this->data = ['meta' => $meta, 'posts' => $posts, 'events' => $event];
         return view('fronted.home', $this->data);
@@ -46,13 +49,29 @@ class MainController extends Controller
         $this->data['posts'] = Post::with('user')
             ->with('comment')
             ->where('post_status', 1)
-            ->orderBy('created_at', 'ASC')
+            ->orderBy('created_at', 'DESC')
             ->paginate(9);
         return view('fronted.blog', $this->data);
     }
 
-    public function articledetail($id)
+    public function articledetail(Request $request, $id)
     {
+        if ($request->isMethod('post')){
+            if ($request->submit == 'KIRIM'){
+                $comment = new Comment();
+                $comment->comment_name      = $request->comment_name;
+                $comment->comment_email     = $request->comment_email;
+                $comment->comment_content   = $request->comment_content;
+                $comment->comment_read      = 1;
+                try {
+                    $comment->save();
+                    $comment->post()->attach([1 => ['post_id' => $id]]);
+                }
+                catch (\Exception $e){
+                    return $e->getMessage();
+                }
+            }
+        }
         $post       = Post::with('tag')
             ->with('category')
             ->with('comment')
@@ -60,7 +79,9 @@ class MainController extends Controller
             ->find($id);
         $tag                        = $post->tag->pluck('tag_name')->toArray();
         $tags                       = '';
-        $post_recents               = Post::with('comment')->where('post_category', $post->post_category)->get();
+        $post_recents               = Post::with('comment')
+            ->where('post_category', $post->post_category)
+            ->orderBy('created_at', 'DESC')->get();
         $post->date                 = Carbon::parse($post->created_at)->formatLocalized('%I %b %Y');
         for ($i=0;$i<count($tag);$i++){
             $tags .= $tag[$i] . ', ';
@@ -135,14 +156,16 @@ class MainController extends Controller
     {
         if ($request->isMethod('post')){
             $message = new Message();
-            $message->message_name = $request->name;
-            $message->message_email = $request->email;
-            $message->message_subject = $request->subject;
-            $message->message_content = $request->message;
+            $message->message_name      = $request->name;
+            $message->message_email     = $request->email;
+            $message->message_subject   = $request->subject;
+            $message->message_content   = $request->message;
+            $message->message_read      = 1;
             $message->save();
         }
         else {
             return view('fronted.contact');
         }
     }
+
 }

@@ -24,7 +24,6 @@
                     <div class="recent-post-content">
                         <h5><a href="{{route('article.detail', $post->post_id)}}">{{$post->post_title}}</a></h5>
                         <span>{{\App\Models\Category::name($post->post_category)}}</span>
-                        <p>{{substr($post->post_content, 0, 45)}}</p>
                     </div>
                 </div>
                 @endforeach

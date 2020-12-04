@@ -1,5 +1,6 @@
 var postcreate = function () {
     var csrf_token = {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')};
+
     var _componentSubmit = function () {
         $("#save").click(function () {
             var fd      = new FormData();
@@ -37,6 +38,9 @@ var postcreate = function () {
                         text: resp['text'],
                         addclass: 'alert bg-'+resp['class']+' border-'+resp['class']+' alert-styled-left'
                     });
+                    setTimeout(function (){
+                        window.location.href = baseurl + '/postingan'
+                    }, 2000);
                 }
             })
         });
@@ -76,6 +80,9 @@ var postcreate = function () {
                         text: resp['text'],
                         addclass: 'alert bg-'+resp['class']+' border-'+resp['class']+' alert-styled-left'
                     });
+                    setTimeout(function (){
+                        window.location.href = baseurl + '/postingan'
+                    }, 2000);
                 }
             })
         });
@@ -139,14 +146,7 @@ var postcreate = function () {
 
     var _componentEditor = function () {
         $('#post_content').summernote({
-            toolbar: [
-                ['style', ['bold', 'italic', 'underline']],
-                ['fontsize', ['fontsize']],
-                ['color', ['color']],
-                ['para', ['ul', 'ol', 'paragraph']],
-                ['table'],
-                ['link', ['link', 'picture']]
-            ],
+
             tabsize: 1,
             height: 400
         });

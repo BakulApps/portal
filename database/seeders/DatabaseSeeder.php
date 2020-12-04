@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         //$tag        = Tag::factory(20)->create();
-        //$category   = Category::factory(20)->create();
+        //$category   = Category::factory(10)->create();
         //$post       = Post::factory(20)->create();
         //$comment    = Comment::factory(20)->create();
         $user       = User::factory(2)->create();

@@ -2,7 +2,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/img/favicon.png')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/fronted/img/favicon.png')}}">
 
     <meta name="title" content="{{isset($meta['title']) ? $meta['title'] : null}}">
     <meta name="description" content="{{isset($meta['desc']) ? $meta['desc'] : null}}">
