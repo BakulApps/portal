@@ -17,13 +17,15 @@ class CreateEntityUsersTable extends Migration
             $table->id('user_id');
             $table->string('user_image')->nullable();
             $table->string('user_fullname', 200);
-            $table->string('user_name', 200);
+            $table->string('user_name', 50);
             $table->string('user_pass');
+            $table->string('user_email', 50);
+            $table->string('user_role');
+            $table->mediumText('user_desc')->nullable();
+            $table->string('user_facebook')->nullable();
+            $table->string('user_instagram')->nullable();
+            $table->string('user_twitter')->nullable();
             $table->rememberToken();
-            $table->mediumText('user_desc');
-            $table->string('user_facebook');
-            $table->string('user_instagram');
-            $table->string('user_twitter');
         });
     }
 

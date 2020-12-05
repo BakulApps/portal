@@ -38,8 +38,8 @@
                                 </div>
                             </div>
                             <img src="{{asset($event->event_image == null ? 'assets/fronted/img/event/event-details.jpg' : $event->event_image)}}" alt="">
-                            <h3>{{$event->event_name}}</h3>
-                            <p>{{$event->event_content}}</p>
+                            <h3>{{$event->event_title}}</h3>
+                            {!! $event->event_content !!}
                             @if($event->event_galery != null)
                                 @php $galery = json_decode($event->event_galery) @endphp
                             <div class="event-gallery text-center mt-40">

@@ -20,7 +20,7 @@
                 </a>
             </li>
         </ul>
-        <span class="badge bg-success ml-md-3 mr-md-auto">Terhubung</span>
+        <a target="_blank" href="https://darul-hikmah.sch.id" class="badge bg-success ml-md-3 mr-md-auto">Kunjungi Situs</a>
         <ul class="navbar-nav navbar-right">
             <li class="nav-item dropdown dropdown-user">
                 <a href="#" class="navbar-nav-link d-flex align-items-center dropdown-toggle" data-toggle="dropdown">

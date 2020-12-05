@@ -11,13 +11,13 @@
                                 <img src="{{asset($event->event_image == null ? 'assets/fronted/img/event/event.jpg' : $event->event_image)}}" alt="">
                             </a>
                             <div class="event-date-wrap">
-                                <span class="event-date">{{\Carbon\Carbon::parse($event->event_date)->formatLocalized('%I')}}</span>
-                                <span>{{\Carbon\Carbon::parse($event->event_date)->formatLocalized('%b')}}</span>
+                                <span class="event-date">{{$event->date_start('d')}}</span>
+                                <span>{{$event->date_start('m')}}</span>
                             </div>
                         </div>
                         <div class="event-content">
-                            <h3><a href="{{route('event.detail', $event->event_id)}}">{{$event->event_name}}</a></h3>
-                            <p>{{substr($event->event_content, 0, 80)}}</p>
+                            <h3><a href="{{route('event.detail', $event->event_id)}}">{{$event->event_title}}</a></h3>
+                            {!! substr($event->event_content, 0, 150) !!}
                             <div class="event-meta-wrap">
                                 <div class="event-meta">
                                     <i class="fa fa-location-arrow"></i>

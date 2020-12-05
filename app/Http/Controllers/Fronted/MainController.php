@@ -33,7 +33,7 @@ class MainController extends Controller
             ];
         $posts = Post::with('user')->with('comment')->where('post_status', 1)
             ->limit(4)->orderBy('created_at', 'DESC')->get();
-        $event = Event::where('event_date', '>', now())->limit(4)->get();
+        $event = Event::where('event_date_start', '>', now())->limit(4)->get();
         $this->data = ['meta' => $meta, 'posts' => $posts, 'events' => $event];
         return view('fronted.home', $this->data);
     }
@@ -101,7 +101,7 @@ class MainController extends Controller
     public function event()
     {
         $this->data = [
-            'events'    => Event::orderBy('event_date')->paginate(9),
+            'events'    => Event::orderBy('event_date_start', 'DESC')->paginate(9),
             'meta'      => [
                 'title' => 'Semua Acara Yayasan Darul Hikmah Menganti',
                 'desc'  => 'Semua Acara Yayasan Darul Hikmah Menganti Kedung Jepara',

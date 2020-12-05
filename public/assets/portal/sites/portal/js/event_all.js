@@ -1,6 +1,6 @@
-var announcementjs = function () {
+var eventjs = function () {
     var _componetnDataTable = function () {
-        $('.datatable-announcement').DataTable({
+        $('.datatable-event').DataTable({
             autoWidth: false,
             bLengthChange: true,
             bSort: false,
@@ -22,11 +22,13 @@ var announcementjs = function () {
                 {className: 'text-center', targets: 1},
                 {className: 'text-center', targets: 2},
                 {className: 'text-center', targets: 3},
-                {className: 'text-center', targets: 4}
+                {className: 'text-center', targets: 4},
+                {className: 'text-center', targets: 5},
+                {className: 'text-center', targets: 6}
             ],
             ajax: ({
                 headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                url: baseurl + '/pengumuman',
+                url: baseurl + '/acara',
                 type: 'post',
                 dataType: 'json',
                 data: {
@@ -34,37 +36,17 @@ var announcementjs = function () {
                     '_data' : 'all'
                 }
             })
-        }).on('click', '.btn-edit', function (e) {
-            e.preventDefault();
-            var announcement_id = $(this).data('num');
-            $.ajax({
-                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                url : baseurl + '/pengumuman',
-                type: 'post',
-                dataType: 'json',
-                data: {
-                    '_type': 'data',
-                    '_data': 'announcement',
-                    'announcement_id': announcement_id,
-                },
-                success : function (resp) {
-                    $('.title-add').html('UBAH DATA');
-                    $('#submit').val('update');
-                    $('#announcement_id').val(resp.announcement_id)
-                    $('#announcement_content').val(resp.announcement_content)
-                }
-            });
         }).on('click', '.btn-delete', function (e) {
             e.preventDefault();
-            var announcement_id = $(this).data('num');
+            var event_id = $(this).data('num');
             $.ajax({
                 headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                url : baseurl + '/pengumuman',
+                url : baseurl + '/acara',
                 type: 'post',
                 dataType: 'json',
                 data: {
                     '_type': 'delete',
-                    'announcement_id': announcement_id,
+                    'event_id': event_id,
                 },
                 success : function (resp) {
                     new PNotify({
@@ -72,7 +54,7 @@ var announcementjs = function () {
                         text: resp['text'],
                         addclass: 'alert bg-'+resp['class']+' border-'+resp['class']+' alert-styled-left'
                     });
-                    $('.datatable-announcement').DataTable().ajax.reload();
+                    $('.datatable-event').DataTable().ajax.reload();
                 }
             });
         })
@@ -86,43 +68,14 @@ var announcementjs = function () {
         });
     };
 
-    var _componentSubmit = function () {
-        $("#submit").click(function () {
-            $.ajax({
-                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                url : baseurl + '/pengumuman',
-                type: 'post',
-                dataType: 'json',
-                data: {
-                    '_type': $('#submit').val(),
-                    'announcement_id': $('#announcement_id').val(),
-                    'announcement_content': $('#announcement_content').val(),
-                },
-                success : function (resp) {
-                    new PNotify({
-                        title: resp['title'],
-                        text: resp['text'],
-                        addclass: 'alert bg-'+resp['class']+' border-'+resp['class']+' alert-styled-left'
-                    });
-                    $('.title-add').html('TAMBAH DATA');
-                    $('#submit').val('store');
-                    $('#announcement_id').val('')
-                    $('#announcement_content').val('');
-                    $('.datatable-announcement').DataTable().ajax.reload();
-                }
-            })
-        })
-    }
-
     return {
         init: function() {
             _componetnDataTable();
             _componentSelect2();
-            _componentSubmit();
         }
     }
 }();
 
 document.addEventListener('DOMContentLoaded', function() {
-    announcementjs.init();
+    eventjs.init();
 });

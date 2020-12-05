@@ -1,10 +1,13 @@
-var yearjs = function () {
+var userjs = function () {
+
+    var csrf_token = {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')};
+
     var _componetnDataTable = function () {
-        $('.datatable-year').DataTable({
+        $('.datatable-user').DataTable({
             autoWidth: false,
             bLengthChange: true,
             bSort: false,
-            scrollX: true,
+            scrollX: false,
             dom: '<"datatable-header"fBl><"datatable-scroll-wrap"t><"datatable-footer"ip>',
             language: {
                 emptyTable: 'Tak ada data yang tersedia pada tabel ini',
@@ -23,10 +26,12 @@ var yearjs = function () {
                 {className: 'text-center', targets: 2},
                 {className: 'text-center', targets: 3},
                 {className: 'text-center', targets: 4},
+                {className: 'text-center', targets: 5},
+                {className: 'text-center', targets: 6},
             ],
             ajax: ({
                 headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                url: baseurl + '/kurikulum/tahun',
+                url: baseurl + '/pengguna',
                 type: 'post',
                 dataType: 'json',
                 data: {
@@ -34,39 +39,46 @@ var yearjs = function () {
                     '_data' : 'all'
                 }
             })
-        }).on('click', '.btn-edit', function (e) {
+        }).on('click', '.btn-edit', function (e){
             e.preventDefault();
-            var year_id = $(this).data('num');
+            var user_id = $(this).data('num');
             $.ajax({
-                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                url : baseurl + '/kurikulum/tahun',
+                headers: csrf_token,
+                url : baseurl + '/pengguna',
                 type: 'post',
                 dataType: 'json',
                 data: {
                     '_type': 'data',
-                    '_data': 'year',
-                    'year_id': year_id,
+                    '_data': 'user',
+                    'user_id': user_id,
                 },
                 success : function (resp) {
-                    $('.title-add').html('UBAH DATA');
+                    $('#user_id').val(resp.user_id);
+                    $('#user_fullname').val(resp.user_fullname);
+                    $('#user_name').val(resp.user_name);
+                    $('#user_email').val(resp.user_email);
+                    $('#user_role').val(resp.user_role).change();
+                    $('#user_facebook').val(resp.user_facebook);
+                    $('#user_instagram').val(resp.user_instagram);
+                    $('#user_twitter').val(resp.user_twitter);
+                    $('#user_desc').html(resp.user_desc);
+                    $('.title').html('Ubah Pengguna');
                     $('#submit').val('update');
-                    $('#year_id').val(resp.year_id)
-                    $('#year_number').val(resp.year_number)
-                    $('#year_name').val(resp.year_name);
-                    $('#year_desc').val(resp.year_desc);
+                    $('#modal-user').modal('show');
+
                 }
             });
         }).on('click', '.btn-delete', function (e) {
             e.preventDefault();
-            var year_id = $(this).data('num');
+            var user_id = $(this).data('num');
             $.ajax({
-                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                url : baseurl + '/kurikulum/tahun',
+                headers: csrf_token,
+                url : baseurl + '/pengguna',
                 type: 'post',
                 dataType: 'json',
                 data: {
                     '_type': 'delete',
-                    'year_id': year_id,
+                    'user_id': user_id,
                 },
                 success : function (resp) {
                     new PNotify({
@@ -74,9 +86,53 @@ var yearjs = function () {
                         text: resp['text'],
                         addclass: 'alert bg-'+resp['class']+' border-'+resp['class']+' alert-styled-left'
                     });
-                    $('.datatable-year').DataTable().ajax.reload();
+                    $('.datatable-user').DataTable().ajax.reload();
                 }
             });
+        })
+    }
+
+    var _componentSubmit = function () {
+        $("#submit").click(function () {
+            $.ajax({
+                headers: csrf_token,
+                url : baseurl + '/pengguna',
+                type: 'post',
+                dataType: 'json',
+                data: {
+                    _type: $('#submit').val(),
+                    user_id: $('#user_id').val(),
+                    user_fullname: $('#user_fullname').val(),
+                    user_name: $('#user_name').val(),
+                    user_pass: $('#user_pass').val(),
+                    user_email: $('#user_email').val(),
+                    user_role: $('#user_role').val(),
+                    user_facebook: $('#user_facebook').val(),
+                    user_instagram: $('#user_instagram').val(),
+                    user_twitter: $('#user_twitter').val(),
+                    user_desc: $('#user_desc').val()
+                },
+                success : function (resp) {
+                    new PNotify({
+                        title: resp['title'],
+                        text: resp['text'],
+                        addclass: 'alert bg-'+resp['class']+' border-'+resp['class']+' alert-styled-left'
+                    });
+                    $('#user_id').val();
+                    $('#user_fullname').val();
+                    $('#user_name').val();
+                    $('#user_email').val();
+                    $('#user_role').val();
+                    $('#user_facebook').val();
+                    $('#user_instagram').val();
+                    $('#user_twitter').val();
+                    $('#user_desc').val('');
+                    $('#submit').val('store');
+                    $('.title').html('Tambah Pengguna');
+                    $('#modal-user').modal('hide');
+                    $('.datatable-user').DataTable().ajax.reload();
+                }
+            })
         })
     }
 
@@ -86,50 +142,20 @@ var yearjs = function () {
             dropdownAutoWidth: true,
             width: 'auto'
         });
-    };
-
-    var _componentSubmit = function () {
-        $("#submit").click(function () {
-            $.ajax({
-                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                url : baseurl + '/kurikulum/tahun',
-                type: 'post',
-                dataType: 'json',
-                data: {
-                    '_type': $('#submit').val(),
-                    'year_id': $('#year_id').val(),
-                    'year_number': $('#year_number').val(),
-                    'year_name': $('#year_name').val(),
-                    'year_desc': $('#year_desc').val()
-                },
-                success : function (resp) {
-                    new PNotify({
-                        title: resp['title'],
-                        text: resp['text'],
-                        addclass: 'alert bg-'+resp['class']+' border-'+resp['class']+' alert-styled-left'
-                    });
-                    $('.title-add').html('TAMBAH DATA');
-                    $('#submit').val('store');
-                    $('#year_id').val('')
-                    $('#year_number').val('')
-                    $('#year_code').val('')
-                    $('#year_name').val('');
-                    $('#year_desc').val('');
-                    $('.datatable-year').DataTable().ajax.reload();
-                }
-            })
+        $('.select').select2({
+            minimumResultsForSearch: Infinity,
         })
-    }
+    };
 
     return {
         init: function() {
             _componetnDataTable();
-            _componentSelect2();
             _componentSubmit();
+            _componentSelect2();
         }
     }
 }();
 
 document.addEventListener('DOMContentLoaded', function() {
-    yearjs.init();
+    userjs.init();
 });

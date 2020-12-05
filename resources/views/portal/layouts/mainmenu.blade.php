@@ -10,6 +10,13 @@
                 <li class="nav-item"><a href="{{route('portal.post.tag')}}" class="nav-link">Tagar</a></li>
             </ul>
         </li>
+        <li class="nav-item nav-item-submenu">
+            <a href="#" class="nav-link"><i class="icon-snowflake"></i> <span> Acara/Kegiatan</span></a>
+            <ul class="nav nav-group-sub" data-submenu-title="Postingan">
+                <li class="nav-item"><a href="{{route('portal.event.all')}}" class="nav-link">Semua</a></li>
+                <li class="nav-item"><a href="{{route('portal.event.create')}}" class="nav-link">Buat Postingan</a></li>
+            </ul>
+        </li>
         <li class="nav-item">
             <a href="{{route('portal.comment.all')}}" class="nav-link">
                 <i class="icon-comment"></i>
@@ -24,6 +31,11 @@
                 <span class="badge bg-blue-400 align-self-center ml-auto">{{\App\Models\Message::unred()}}</span>
             </a>
         </li>
+        @if(auth('user')->user()->user_role == 1)
+        <li class="nav-item">
+            <a href="{{route('portal.user')}}" class="nav-link"><i class="icon-user"></i> <span> Pengguna</span></a>
+        </li>
+        @endif
         <li class="nav-item"><a href="{{route('portal.setting')}}" class="nav-link"><i class="icon-cog"></i><span>Pengaturan</span></a></li>
     </ul>
 </div>

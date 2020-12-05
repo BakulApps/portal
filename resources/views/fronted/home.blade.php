@@ -543,8 +543,8 @@
                             <img src="{{asset($event->event_image == null ? 'assets/fronted/img/event/event.jpg' : $event->event_image)}}" alt="">
                         </a>
                         <div class="event-date-wrap">
-                            <span class="event-date">{{\Carbon\Carbon::parse($event->event_date)->formatLocalized('%I')}}</span>
-                            <span>{{\Carbon\Carbon::parse($event->event_date)->formatLocalized('%b')}}</span>
+                            <span class="event-date">{{$event->date_start('d')}}</span>
+                            <span>{{$event->date_star('m')}}</span>
                         </div>
                     </div>
                     <div class="event-content">
