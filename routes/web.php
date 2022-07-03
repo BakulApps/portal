@@ -25,7 +25,8 @@ Route::match(['post', 'get'], '/masuk', 'AuthController@login')->name('login');
 Route::match(['post', 'get'], '/keluar', 'AuthController@logout')->name('logout');
 
 Route::get('/test', function (){
-    return \Illuminate\Support\Facades\Hash::make('Masadepan100');
+    $data = json_decode('{"0":{"test":"data"}}', true);
+    return $data;
 });
 
 

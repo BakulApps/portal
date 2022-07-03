@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['prefix' => 'slider'], function (){
+    Route::post('/store', 'SliderController@store')->name('api.slider.store');
+    Route::post('/update', 'SliderController@update')->name('api.slider.update');
+    Route::post('/delete', 'SliderController@delete')->name('api.slider.delete');
+    Route::post('/view', 'SliderController@view')->name('api.slider.view');
 });
