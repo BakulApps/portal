@@ -24,9 +24,4 @@ Route::match(['post', 'get'], '/kontak', 'MainController@contact')->name('contac
 Route::match(['post', 'get'], '/masuk', 'AuthController@login')->name('login');
 Route::match(['post', 'get'], '/keluar', 'AuthController@logout')->name('logout');
 
-Route::get('/test', function (){
-    $data = json_decode('{"0":{"test":"data"}}', true);
-    return $data;
-});
-
 
