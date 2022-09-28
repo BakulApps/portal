@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Comment;
 use App\Models\Event;
 use App\Models\Message;
+use App\Models\Page;
 use App\Models\Post;
 use App\Models\Slider;
 use App\Models\Tag;
@@ -32,10 +33,14 @@ class MainController extends Controller
             'desc'  => 'Portal Resmi Yayasan Darul Hikmah Menganti Kedung Jepara',
             'keyword' => 'portal, portal resmi, portal yayasan, portal yayasan darul hikmah, portal yayasan darul hikmah menganti'
             ];
+        foreach (Page::all() as $pages){
+            $page[$pages->page_name] = $pages->page_value;
+        }
         $this->data['posts'] = Post::with('user')->with('comment')->where('post_status', 1)
             ->limit(4)->orderBy('created_at', 'DESC')->get();
         $this->data['events'] = Event::where('event_date_start', '>', now())->limit(4)->get();
         $this->data['sliders'] = Slider::where('slider_status', 1)->get();
+        $this->data['page'] = (object) $page;
         return view('fronted.home', $this->data);
     }
 

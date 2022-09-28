@@ -32,6 +32,7 @@ class DatabaseSeeder extends Seeder
         //    $post->tag()->attach(['post_id' => $post->post_id], ['tag_id' => 10]);
         //    $post->comment()->attach(['post_id' => $post->post_id], ['comment_id' => 8]);
         //});
+        $this->call(PageDatabaseSeeder::class);
 
 
     }

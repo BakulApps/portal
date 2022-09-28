@@ -20,3 +20,9 @@ Route::group(['prefix' => 'slider'], function (){
     Route::post('/delete', 'SliderController@delete')->name('api.slider.delete');
     Route::post('/view', 'SliderController@view')->name('api.slider.view');
 });
+
+Route::group(['prefix' => 'page'], function (){
+    Route::post('/update', 'PageController@update')->name('api.page.update');
+    Route::post('/view', 'PageController@view')->name('api.page.view');
+});
+

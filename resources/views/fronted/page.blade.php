@@ -7,44 +7,44 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="single-choose-us choose-bg-light-blue">
                         <div class="choose-img">
-                            <img class="animated" src="{{asset($page->home_widget_feature_1_image)}}" alt="">
+                            <img class="animated" src="{{asset('assets/fronted/img/icon/brain.png')}}" alt="">
                         </div>
                         <div class="choose-content">
-                            <h3>{{$page->home_widget_feature_1_title}}</h3>
-                            <p>{{$page->home_widget_feature_1_content}}</p>
+                            <h3>Integritas</h3>
+                            <p>Keselarasan Antara Hati, Pikiran, Perkataan Dan Perbuatan Yang Baik Dan Benar.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="single-choose-us choose-bg-yellow">
                         <div class="choose-img">
-                            <img class="animated" src="{{asset($page->home_widget_feature_2_image)}}" alt="">
+                            <img class="animated" src="{{asset('assets/fronted/img/icon/education.png')}}" alt="">
                         </div>
                         <div class="choose-content">
-                            <h3>{{$page->home_widget_feature_2_title}}</h3>
-                            <p>{{$page->home_widget_feature_2_content}}</p>
+                            <h3>Profesionalitas</h3>
+                            <p>Bekerja Secara Disiplin, Kompeten Dan Tepat Waktu Guna Memberikan Hasil Terbaik.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="single-choose-us choose-bg-blue">
                         <div class="choose-img">
-                            <img class="animated" src="{{asset($page->home_widget_feature_3_image)}}" alt="">
+                            <img class="animated" src="{{asset('assets/fronted/img/icon/flasks.png')}}" alt="">
                         </div>
                         <div class="choose-content">
-                            <h3>{{$page->home_widget_feature_3_title}}</h3>
-                            <p>{{$page->home_widget_feature_3_content}}</p>
+                            <h3>Inovasi</h3>
+                            <p>Menyempurnakan Yang Sudah Ada Dan Mengkreasi Hal Baru Guna Memberikan Yang Lebih Baik. </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="single-choose-us choose-bg-green">
                         <div class="choose-img">
-                            <img class="animated" src="{{asset($page->home_widget_feature_4_image)}}" alt="">
+                            <img class="animated" src="{{asset('assets/fronted/img/icon/responsibility.png')}}" alt="">
                         </div>
                         <div class="choose-content">
-                            <h3>{{$page->home_widget_feature_4_title}}</h3>
-                            <p>{{$page->home_widget_feature_4_content}}</p>
+                            <h3>Tanggung Jawab</h3>
+                            <p>Bekerja Secara Tuntas Dan Konsekuen Sesuai Pedoman Yang Telah Disepakati Bersama. </p>
                         </div>
                     </div>
                 </div>
@@ -537,31 +537,31 @@
             </div>
             <div class="event-active owl-carousel nav-style-1">
                 @foreach($events as $event)
-                <div class="single-event event-white-bg">
-                    <div class="event-img">
-                        <a href="{{route('event.detail', $event->event_id)}}">
-                            <img src="{{asset($event->event_image == null ? 'assets/fronted/img/event/event.jpg' : $event->event_image)}}" alt="">
-                        </a>
-                        <div class="event-date-wrap">
-                            <span class="event-date">{{$event->date_start('d')}}</span>
-                            <span>{{$event->date_star('m')}}</span>
-                        </div>
-                    </div>
-                    <div class="event-content">
-                        <h3><a href="{{route('event.detail', $event->event_id)}}">{{$event->event_name}}</a></h3>
-                        <p>{{substr($event->event_content, 0, 50)}}</p>
-                        <div class="event-meta-wrap">
-                            <div class="event-meta">
-                                <i class="fa fa-location-arrow"></i>
-                                <span>{{$event->event_place}}</span>
-                            </div>
-                            <div class="event-meta">
-                                <i class="fa fa-clock-o"></i>
-                                <span>{{$event->event_time}}</span>
+                    <div class="single-event event-white-bg">
+                        <div class="event-img">
+                            <a href="{{route('event.detail', $event->event_id)}}">
+                                <img src="{{asset($event->event_image == null ? 'assets/fronted/img/event/event.jpg' : $event->event_image)}}" alt="">
+                            </a>
+                            <div class="event-date-wrap">
+                                <span class="event-date">{{$event->date_start('d')}}</span>
+                                <span>{{$event->date_star('m')}}</span>
                             </div>
                         </div>
+                        <div class="event-content">
+                            <h3><a href="{{route('event.detail', $event->event_id)}}">{{$event->event_name}}</a></h3>
+                            <p>{{substr($event->event_content, 0, 50)}}</p>
+                            <div class="event-meta-wrap">
+                                <div class="event-meta">
+                                    <i class="fa fa-location-arrow"></i>
+                                    <span>{{$event->event_place}}</span>
+                                </div>
+                                <div class="event-meta">
+                                    <i class="fa fa-clock-o"></i>
+                                    <span>{{$event->event_time}}</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
                 @endforeach
             </div>
         </div>

@@ -25,8 +25,11 @@ Route::match(['post', 'get'], '/masuk', 'AuthController@login')->name('login');
 Route::match(['post', 'get'], '/keluar', 'AuthController@logout')->name('logout');
 
 Route::get('/test', function (){
-    $data = json_decode('{"0":{"test":"data"}}', true);
-    return $data;
+    foreach (\App\Models\Page::all() as $pages){
+        $page[$pages->page_name] = $pages->page_value;
+    }
+
+    dd($page);
 });
 
 
