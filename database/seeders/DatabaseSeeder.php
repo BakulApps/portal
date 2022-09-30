@@ -33,6 +33,7 @@ class DatabaseSeeder extends Seeder
         //    $post->comment()->attach(['post_id' => $post->post_id], ['comment_id' => 8]);
         //});
         $this->call(PageDatabaseSeeder::class);
+        $this->call(SettingDatabaseSeeder::class);
 
 
     }
