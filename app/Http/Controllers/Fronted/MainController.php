@@ -9,7 +9,6 @@ use App\Models\Event;
 use App\Models\Message;
 use App\Models\Page;
 use App\Models\Post;
-use App\Models\Setting;
 use App\Models\Slider;
 use App\Models\Tag;
 use Carbon\Carbon;
@@ -24,8 +23,7 @@ class MainController extends Controller
         $categories     = Category::with('post')->limit(7)->get();
         $tags           = Tag::limit(10)->get();
         $posts          = Post::where('post_status', 1)->limit(3)->orderBy('created_at', 'DESC')->get();
-        $setting        = Setting::get();
-        $this->data     = ['category_sidebar' => $categories, 'tags_sidebar' => $tags, 'posts_sidebar' => $posts, 'setting' => $setting];
+        $this->data     = ['category_sidebar' => $categories, 'tags_sidebar' => $tags, 'posts_sidebar' => $posts];
     }
 
     public function home()
@@ -41,8 +39,9 @@ class MainController extends Controller
         $this->data['posts'] = Post::with('user')->with('comment')->where('post_status', 1)
             ->limit(4)->orderBy('created_at', 'DESC')->get();
         $this->data['events'] = Event::where('event_date_start', '>', now())->limit(4)->get();
+        $this->data['sliders'] = Slider::where('slider_status', 1)->get();
         $this->data['page'] = (object) $page;
-        return view('frontend.home', $this->data);
+        return view('fronted.home', $this->data);
     }
 
     public function article()
