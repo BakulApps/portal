@@ -1,50 +1,51 @@
-@extends('fronted.layout.master')
+@extends('frontend.master')
 @section('content')
-    @include('fronted.layout.slider')
+    @include('frontend.layout.slider')
     <div class="choose-us section-padding-1">
         <div class="container-fluid">
             <div class="row no-gutters choose-negative-mrg">
                 <div class="col-lg-3 col-md-6">
                     <div class="single-choose-us choose-bg-light-blue">
                         <div class="choose-img">
-                            <img class="animated" src="{{asset($page->home_widget_feature_1_image)}}" alt="">
+                            <img class="animated" src="{{asset('assets/fronted/img/icon/brain.png')}}" alt="">
                         </div>
                         <div class="choose-content">
-                            <h3>{{$page->home_widget_feature_1_title}}</h3>
-                            <p>{{$page->home_widget_feature_1_content}}</p>
+                            <h3>Integritas</h3>
+                            <p>Keselarasan Antara Hati, Pikiran, Perkataan Dan Perbuatan Yang Baik Dan Benar.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="single-choose-us choose-bg-yellow">
                         <div class="choose-img">
-                            <img class="animated" src="{{asset($page->home_widget_feature_2_image)}}" alt="">
+                            <img class="animated" src="{{asset('assets/fronted/img/icon/education.png')}}" alt="">
                         </div>
                         <div class="choose-content">
-                            <h3>{{$page->home_widget_feature_2_title}}</h3>
-                            <p>{{$page->home_widget_feature_2_content}}</p>
+                            <h3>Profesionalitas</h3>
+                            <p>Bekerja Secara Disiplin, Kompeten Dan Tepat Waktu Guna Memberikan Hasil Terbaik.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="single-choose-us choose-bg-blue">
                         <div class="choose-img">
-                            <img class="animated" src="{{asset($page->home_widget_feature_3_image)}}" alt="">
+                            <img class="animated" src="{{asset('assets/fronted/img/icon/flasks.png')}}" alt="">
                         </div>
                         <div class="choose-content">
-                            <h3>{{$page->home_widget_feature_3_title}}</h3>
-                            <p>{{$page->home_widget_feature_3_content}}</p>
+                            <h3>Inovasi</h3>
+                            <p>Menyempurnakan Yang Sudah Ada Dan Mengkreasi Hal Baru Guna Memberikan Yang Lebih
+                                Baik. </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="single-choose-us choose-bg-green">
                         <div class="choose-img">
-                            <img class="animated" src="{{asset($page->home_widget_feature_4_image)}}" alt="">
+                            <img class="animated" src="{{asset('assets/fronted/img/icon/responsibility.png')}}" alt="">
                         </div>
                         <div class="choose-content">
-                            <h3>{{$page->home_widget_feature_4_title}}</h3>
-                            <p>{{$page->home_widget_feature_4_content}}</p>
+                            <h3>Tanggung Jawab</h3>
+                            <p>Bekerja Secara Tuntas Dan Konsekuen Sesuai Pedoman Yang Telah Disepakati Bersama. </p>
                         </div>
                     </div>
                 </div>
@@ -59,7 +60,8 @@
                         <div class="section-title section-title-green mb-30">
                             <h2>Pendiri <span>Kami</span></h2>
                             <p style="text-align: justify">
-                                KH. Sulaiman Tamam lahir pada tahun 1916 M di desa Menganti Kedung Jepara. Beliau merupakan
+                                KH. Sulaiman Tamam lahir pada tahun 1916 M di desa Menganti Kedung Jepara. Beliau
+                                merupakan
                                 putra pertama dari 3 bersaudara yakni KH. Abdurrahman Jondang dan Kyai Wardi Bugel, dari
                                 pasangan KH. Idris dan Nyai Salamah.
                             </p>
@@ -86,10 +88,11 @@
             </div>
         </div>
     </div>
-    <div class="course-area bg-img pt-130 pb-10" style="background-image:url({{asset('assets/fronted/img/bg/bg-1.jpg')}});">
+    <div class="course-area bg-img pt-130 pb-10"
+         style="background-image:url({{asset('assets/fronted/img/bg/bg-1.jpg')}});">
         <div class="container">
             <div class="section-title mb-75">
-                <h2> <span>Jenjang</span> Pendidikan</h2>
+                <h2><span>Jenjang</span> Pendidikan</h2>
                 <p>
                     Tahapan pendidikan yang ditetapkan berdasarkan tingkat perkembangan peserta didik, tujuan yang akan
                     dicapai, dan kemampuan yang dikembangkan.
@@ -98,12 +101,14 @@
             <div class="course-slider-active nav-style-1 owl-carousel">
                 <div class="single-course">
                     <div class="course-img">
-                        <a href="#"><img class="animated" src="{{asset('assets/fronted/img/course/course-2.jpg')}}" alt=""></a>
+                        <a href="#"><img class="animated" src="{{asset('assets/fronted/img/course/course-2.jpg')}}"
+                                         alt=""></a>
                         <span>RA</span>
                     </div>
                     <div class="course-content">
                         <h4><a href="#">Raudatul Atfal</a></h4>
-                        <p>Merupakan jenjang pendidikan anak usia dini dalam bentuk pendidikan formal, di bawah pengelolaan Kementerian Agama.</p>
+                        <p>Merupakan jenjang pendidikan anak usia dini dalam bentuk pendidikan formal, di bawah
+                            pengelolaan Kementerian Agama.</p>
                     </div>
                     <div class="course-position-content">
                         <div class="course-btn">
@@ -113,12 +118,14 @@
                 </div>
                 <div class="single-course">
                     <div class="course-img">
-                        <a href="#"><img class="animated" src="{{asset('assets/fronted/img/course/course-3.jpg')}}" alt=""></a>
+                        <a href="#"><img class="animated" src="{{asset('assets/fronted/img/course/course-3.jpg')}}"
+                                         alt=""></a>
                         <span>MI</span>
                     </div>
                     <div class="course-content">
                         <h4><a href="#">Madrasah Ibtidaiyah</a></h4>
-                        <p>Jenjang paling dasar setara dengan Sekolah Dasar, yang pengelolaannya dilakukan oleh Kementerian Agama.</p>
+                        <p>Jenjang paling dasar setara dengan Sekolah Dasar, yang pengelolaannya dilakukan oleh
+                            Kementerian Agama.</p>
                     </div>
                     <div class="course-position-content">
                         <div class="course-btn">
@@ -128,12 +135,14 @@
                 </div>
                 <div class="single-course">
                     <div class="course-img">
-                        <a href="#"><img class="animated" src="{{asset('assets/fronted/img/course/course-4.jpg')}}" alt=""></a>
+                        <a href="#"><img class="animated" src="{{asset('assets/fronted/img/course/course-4.jpg')}}"
+                                         alt=""></a>
                         <span>MTs</span>
                     </div>
                     <div class="course-content">
                         <h4><a href="#">Madrasah Tsanawiyah</a></h4>
-                        <p>Jenjang paling dasar setara dengan Sekolah Dasar, yang pengelolaannya dilakukan oleh Kementerian Agama.</p>
+                        <p>Jenjang paling dasar setara dengan Sekolah Dasar, yang pengelolaannya dilakukan oleh
+                            Kementerian Agama.</p>
                     </div>
                     <div class="course-position-content">
                         <div class="course-btn">
@@ -143,12 +152,14 @@
                 </div>
                 <div class="single-course">
                     <div class="course-img">
-                        <a href="#"><img class="animated" src="{{asset('assets/fronted/img/course/course-5.jpg')}}" alt=""></a>
+                        <a href="#"><img class="animated" src="{{asset('assets/fronted/img/course/course-5.jpg')}}"
+                                         alt=""></a>
                         <span>MA</span>
                     </div>
                     <div class="course-content">
                         <h4><a href="#">Madrasah Aliyah</a></h4>
-                        <p>Jenjang paling dasar setara dengan Sekolah Dasar, yang pengelolaannya dilakukan oleh Kementerian Agama.</p>
+                        <p>Jenjang paling dasar setara dengan Sekolah Dasar, yang pengelolaannya dilakukan oleh
+                            Kementerian Agama.</p>
                     </div>
                     <div class="course-position-content">
                         <div class="course-btn">
@@ -158,12 +169,14 @@
                 </div>
                 <div class="single-course">
                     <div class="course-img">
-                        <a href="#"><img class="animated" src="{{asset('assets/fronted/img/course/course-6.jpg')}}" alt=""></a>
+                        <a href="#"><img class="animated" src="{{asset('assets/fronted/img/course/course-6.jpg')}}"
+                                         alt=""></a>
                         <span>Pondok</span>
                     </div>
                     <div class="course-content">
                         <h4><a href="#">Pondok Pesantren</a></h4>
-                        <p>Jenjang paling dasar setara dengan Sekolah Dasar, yang pengelolaannya dilakukan oleh Kementerian Agama.</p>
+                        <p>Jenjang paling dasar setara dengan Sekolah Dasar, yang pengelolaannya dilakukan oleh
+                            Kementerian Agama.</p>
                     </div>
                     <div class="course-position-content">
                         <div class="course-btn">
@@ -178,7 +191,8 @@
         <div class="container">
             <div class="section-title mb-75">
                 <h2>Statistik <span> Yayasan</span></h2>
-                <p>Peserta Didik, Pendidik & Tenaga Kependidikan, Tropi & Piala, dan Mata Pelajaran Yayasan Darul Hikmah Menganti  </p>
+                <p>Peserta Didik, Pendidik & Tenaga Kependidikan, Tropi & Piala, dan Mata Pelajaran Yayasan Darul Hikmah
+                    Menganti </p>
             </div>
             <div class="row">
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
@@ -234,7 +248,8 @@
                         </div>
                         <div class="row no-gutters">
                             <div class="ml-auto col-lg-6 col-md-12">
-                                <div class="testi-content bg-img default-overlay" style="background-image:url({{asset('assets/fronted/img/bg/testi.png')}});">
+                                <div class="testi-content bg-img default-overlay"
+                                     style="background-image:url({{asset('assets/fronted/img/bg/testi.png')}});">
                                     <div class="quote-style quote-left">
                                         <i class="fa fa-quote-left"></i>
                                     </div>
@@ -263,12 +278,14 @@
                         </div>
                         <div class="row no-gutters">
                             <div class="ml-auto col-lg-6 col-md-12">
-                                <div class="testi-content bg-img default-overlay" style="background-image:url({{asset('assets/fronted/img/bg/testi.png')}});">
+                                <div class="testi-content bg-img default-overlay"
+                                     style="background-image:url({{asset('assets/fronted/img/bg/testi.png')}});">
                                     <div class="quote-style quote-left">
                                         <i class="fa fa-quote-left"></i>
                                     </div>
                                     <p>
-                                        Pendidikan dan pengajaran di dalam Republik Indonesia harus berdasarkan kebudayaan
+                                        Pendidikan dan pengajaran di dalam Republik Indonesia harus berdasarkan
+                                        kebudayaan
                                         dan kemasyarakatan bangsa Indonesia, menuju ke arah kebahagiaan batin serta
                                         keselamatan hidup lahir.
                                     </p>
@@ -292,13 +309,15 @@
                         </div>
                         <div class="row no-gutters">
                             <div class="ml-auto col-lg-6 col-md-12">
-                                <div class="testi-content bg-img default-overlay" style="background-image:url({{asset('assets/fronted/img/bg/testi.png')}});">
+                                <div class="testi-content bg-img default-overlay"
+                                     style="background-image:url({{asset('assets/fronted/img/bg/testi.png')}});">
                                     <div class="quote-style quote-left">
                                         <i class="fa fa-quote-left"></i>
                                     </div>
                                     <p>
                                         Orang yang mempunyai kecerdasan budi pekerti itu senantiasa memikir-mikirkan dan
-                                        merasa-rasakan serta selalu memakai ukuran, timbangan dan dasar-dasar yang pasti dan
+                                        merasa-rasakan serta selalu memakai ukuran, timbangan dan dasar-dasar yang pasti
+                                        dan
                                         tetap.
                                     </p>
                                     <div class="testi-info">
@@ -330,7 +349,8 @@
             </div>
         </div>
     </div>
-    <div class="register-area bg-img pt-130 pb-130" style="background-image:url({{asset('assets/fronted/img/bg/bg-2.jpg')}});">
+    <div class="register-area bg-img pt-130 pb-130"
+         style="background-image:url({{asset('assets/fronted/img/bg/bg-2.jpg')}});">
         <div class="container">
             <div class="section-title-2 mb-75 white-text">
                 <h2>Daftar <span>Sekarang</span></h2>
@@ -529,7 +549,8 @@
             </div>
         </div>
     </div>
-    <div class="event-area bg-img default-overlay pt-130 pb-130" style="background-image:url({{asset('assets/fronted/img/bg/bg-3.jpg')}});">
+    <div class="event-area bg-img default-overlay pt-130 pb-130"
+         style="background-image:url({{asset('assets/fronted/img/bg/bg-3.jpg')}});">
         <div class="container">
             <div class="section-title mb-75">
                 <h2><span>Agenda</span> Mendatang</h2>
@@ -537,31 +558,33 @@
             </div>
             <div class="event-active owl-carousel nav-style-1">
                 @foreach($events as $event)
-                <div class="single-event event-white-bg">
-                    <div class="event-img">
-                        <a href="{{route('event.detail', $event->event_id)}}">
-                            <img src="{{asset($event->event_image == null ? 'assets/fronted/img/event/event.jpg' : $event->event_image)}}" alt="">
-                        </a>
-                        <div class="event-date-wrap">
-                            <span class="event-date">{{$event->date_start('d')}}</span>
-                            <span>{{$event->date_star('m')}}</span>
-                        </div>
-                    </div>
-                    <div class="event-content">
-                        <h3><a href="{{route('event.detail', $event->event_id)}}">{{$event->event_name}}</a></h3>
-                        <p>{{substr($event->event_content, 0, 50)}}</p>
-                        <div class="event-meta-wrap">
-                            <div class="event-meta">
-                                <i class="fa fa-location-arrow"></i>
-                                <span>{{$event->event_place}}</span>
-                            </div>
-                            <div class="event-meta">
-                                <i class="fa fa-clock-o"></i>
-                                <span>{{$event->event_time}}</span>
+                    <div class="single-event event-white-bg">
+                        <div class="event-img">
+                            <a href="{{route('event.detail', $event->event_id)}}">
+                                <img
+                                    src="{{asset($event->event_image == null ? 'assets/fronted/img/event/event.jpg' : $event->event_image)}}"
+                                    alt="">
+                            </a>
+                            <div class="event-date-wrap">
+                                <span class="event-date">{{$event->date_start('d')}}</span>
+                                <span>{{$event->date_star('m')}}</span>
                             </div>
                         </div>
+                        <div class="event-content">
+                            <h3><a href="{{route('event.detail', $event->event_id)}}">{{$event->event_name}}</a></h3>
+                            <p>{{substr($event->event_content, 0, 50)}}</p>
+                            <div class="event-meta-wrap">
+                                <div class="event-meta">
+                                    <i class="fa fa-location-arrow"></i>
+                                    <span>{{$event->event_place}}</span>
+                                </div>
+                                <div class="event-meta">
+                                    <i class="fa fa-clock-o"></i>
+                                    <span>{{$event->event_time}}</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
                 @endforeach
             </div>
         </div>
@@ -578,18 +601,23 @@
                         <div class="single-blog mb-30">
                             <div class="blog-img">
                                 <a href="{{route('article.detail', $post->post_id)}}">
-                                    <img src="{{asset($post->post_image == null ? 'assets/fronted/img/blog/blog-1.jpg' : $post->post_image)}}" alt="">
+                                    <img
+                                        src="{{asset($post->post_image == null ? 'assets/fronted/img/blog/blog-1.jpg' : $post->post_image)}}"
+                                        alt="">
                                 </a>
                             </div>
                             <div class="blog-content-wrap">
                                 <span>{{\App\Models\Category::name($post->post_category)}}</span>
                                 <div class="blog-content">
-                                    <h4><a href="{{route('article.detail', $post->post_id)}}">{{$post->post_title}}</a></h4>
+                                    <h4><a href="{{route('article.detail', $post->post_id)}}">{{$post->post_title}}</a>
+                                    </h4>
                                     {!! substr($post->post_content, 0, 200)!!}
                                     <div class="blog-meta">
                                         <ul>
-                                            <li><a href="#"><i class="fa fa-user"></i> {{$post->user->user_name}}</a></li>
-                                            <li><a href="#"><i class="fa fa-comments-o"></i> {{$post->comment->count()}}</a></li>
+                                            <li><a href="#"><i class="fa fa-user"></i> {{$post->user->user_name}}</a>
+                                            </li>
+                                            <li><a href="#"><i class="fa fa-comments-o"></i> {{$post->comment->count()}}
+                                                </a></li>
                                         </ul>
                                     </div>
                                 </div>

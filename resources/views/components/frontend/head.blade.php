@@ -1,17 +1,16 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/fronted/img/favicon.png')}}">
-
-    <meta name="title" content="{{isset($meta['title']) ? $meta['title'] : null}}">
-    <meta name="description" content="{{isset($meta['desc']) ? $meta['desc'] : null}}">
-    <meta name="keyword" content="{{isset($meta['keyword']) ? $meta['keyword'] : null}}">
-    <meta name="author" content="{{isset($meta['author']) ? $meta['author'] : null}}">
+    @if($meta != null)
+        @for($i=0;$i<count($meta);$i++)
+            <meta name="{{$meta[$i]->name}}" content="{{$meta[$i]->content}}">
+        @endfor
+    @endif
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Portal Resmi Yayasan Darul Hikmah</title>
+    <title>{{$title}}</title>
 
+    <link rel="shortcut icon" type="image/x-icon" href="{{$favicon}}">
     <link rel="stylesheet" href="{{asset('assets/fronted/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/fronted/css/icons.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/fronted/css/plugins.css')}}">

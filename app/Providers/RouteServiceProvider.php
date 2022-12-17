@@ -28,7 +28,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected $namespace            = 'App\\Http\\Controllers';
     protected $namespace_api        = 'App\\Http\\Controllers\\Api';
-    protected $namespace_fronted    = 'App\\Http\\Controllers\\Fronted';
+    protected $namespace_fronted    = 'App\\Http\\Controllers\\Frontend';
     protected $namespace_portal     = 'App\\Http\\Controllers\\Portal';
 
     /**

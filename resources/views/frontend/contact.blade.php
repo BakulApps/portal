@@ -1,4 +1,4 @@
-@extends('fronted.layout.master')
+@extends('frontend.master')
 @section('content')
     <div class="contact-area pt-130 pb-130">
         <div class="container">
@@ -28,7 +28,8 @@
             </div>
         </div>
     </div>
-    <div class="contact-info-area bg-img pt-180 pb-140 default-overlay" style="background-image:url({{asset('assets/fronted/img/bg/contact-info.jpg')}});">
+    <div class="contact-info-area bg-img pt-180 pb-140 default-overlay"
+         style="background-image:url({{asset('assets/fronted/img/bg/contact-info.jpg')}});">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-12">
@@ -46,7 +47,8 @@
                         </div>
                         <div class="contact-info-phn">
                             <div class="info-phn-number">
-                                <p><a target="_blank" href="https://api.whatsapp.com/send?phone=6285217232610">+62 852 1723 2610</a></p>
+                                <p><a target="_blank" href="https://api.whatsapp.com/send?phone=6285217232610">+62 852
+                                        1723 2610</a></p>
                             </div>
                         </div>
                     </div>
@@ -65,13 +67,20 @@
     <div class="brand-logo-area pt-130 pb-130">
         <div class="container">
             <div class="brand-logo-active owl-carousel">
-                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/1.png')}}" alt=""></a></div>
-                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/2.png')}}" alt=""></a></div>
-                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/3.png')}}" alt=""></a></div>
-                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/4.png')}}" alt=""></a></div>
-                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/5.png')}}" alt=""></a></div>
-                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/6.png')}}" alt=""></a></div>
-                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/2.png')}}" alt=""></a></div>
+                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/1.png')}}"
+                                                                alt=""></a></div>
+                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/2.png')}}"
+                                                                alt=""></a></div>
+                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/3.png')}}"
+                                                                alt=""></a></div>
+                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/4.png')}}"
+                                                                alt=""></a></div>
+                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/5.png')}}"
+                                                                alt=""></a></div>
+                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/6.png')}}"
+                                                                alt=""></a></div>
+                <div class="single-brand-logo"><a href="#"><img src="{{asset('assets/fronted/img/brand-logo/2.png')}}"
+                                                                alt=""></a></div>
             </div>
         </div>
     </div>
@@ -270,10 +279,11 @@
                 position: new google.maps.LatLng(40.709896, -73.995481),
                 map: map,
                 icon: 'assets/fronted/img/icon/2.png',
-                animation:google.maps.Animation.BOUNCE,
+                animation: google.maps.Animation.BOUNCE,
                 title: 'Snazzy!'
             });
         }
+
         google.maps.event.addDomListener(window, 'load', init);
     </script>
 @endsection

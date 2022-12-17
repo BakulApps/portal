@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Fronted;
+namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
@@ -29,10 +29,10 @@ class MainController extends Controller
     public function home()
     {
         $this->data['meta']   = [
-            'title' => 'Portal Yayasan Darul Hikmah Menganti',
-            'desc'  => 'Portal Resmi Yayasan Darul Hikmah Menganti Kedung Jepara',
-            'keyword' => 'portal, portal resmi, portal yayasan, portal yayasan darul hikmah, portal yayasan darul hikmah menganti'
-            ];
+            (object) ['name' => 'title', 'content' => 'Portal Yayasan Darul Hikmah Menganti'],
+            (object) ['name' => 'desc', 'content'  => 'Portal Resmi Yayasan Darul Hikmah Menganti Kedung Jepara'],
+            (object) ['name' => 'keyword', 'content' => 'portal, portal resmi, portal yayasan, portal yayasan darul hikmah, portal yayasan darul hikmah menganti']
+        ];
         foreach (Page::all() as $pages){
             $page[$pages->page_name] = $pages->page_value;
         }
@@ -41,7 +41,7 @@ class MainController extends Controller
         $this->data['events'] = Event::where('event_date_start', '>', now())->limit(4)->get();
         $this->data['sliders'] = Slider::where('slider_status', 1)->get();
         $this->data['page'] = (object) $page;
-        return view('fronted.home', $this->data);
+        return view('frontend.home', $this->data);
     }
 
     public function article()

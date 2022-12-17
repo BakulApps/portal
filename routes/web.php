@@ -24,12 +24,3 @@ Route::match(['post', 'get'], '/kontak', 'MainController@contact')->name('contac
 Route::match(['post', 'get'], '/masuk', 'AuthController@login')->name('login');
 Route::match(['post', 'get'], '/keluar', 'AuthController@logout')->name('logout');
 
-Route::get('/test', function (){
-    foreach (\App\Models\Page::all() as $pages){
-        $page[$pages->page_name] = $pages->page_value;
-    }
-
-    dd($page);
-});
-
-
