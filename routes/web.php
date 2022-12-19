@@ -24,3 +24,29 @@ Route::match(['post', 'get'], '/kontak', 'MainController@contact')->name('contac
 Route::match(['post', 'get'], '/masuk', 'AuthController@login')->name('login');
 Route::match(['post', 'get'], '/keluar', 'AuthController@logout')->name('logout');
 
+Route::get('/test', function (){
+    $data = [
+        [
+            'image' => '/storage/images/icon/graduated.png',
+            'count' => '2342',
+            'title' => 'MI Darul Hikmah',
+        ],
+        [
+            'image' => '/storage/images/icon/graduated.png',
+            'count' => '2342',
+            'title' => 'MTs Darul Hikmah',
+        ],
+        [
+            'image' => '/storage/images/icon/graduated.png',
+            'count' => '2342',
+            'title' => 'MA Darul Hikmah',
+        ],
+        [
+            'image' => '/storage/images/icon/graduated.png',
+            'count' => '2342',
+            'title' => 'Ponpes Darul Hikmah',
+        ]
+    ];
+    return response()->json($data);
+});
+

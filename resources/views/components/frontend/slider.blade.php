@@ -2,7 +2,7 @@
     <div class="slider-active owl-carousel">
         @foreach($sliders as $slider)
             @php($button = json_decode($slider->slider_button, true))
-            <div class="single-slider slider-height-1 bg-img" style="background-image:url({{asset('storage/'.$slider->slider_bg_image)}});">
+            <div class="single-slider slider-height-1 bg-img" style="background-image:url({{asset($slider->slider_bg_image)}});">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
@@ -27,7 +27,7 @@
                         </div>
                     </div>
                     <div class="slider-single-img slider-animated-1">
-                        <img class="animated" src="{{asset('storage/'.$slider->slider_image)}}" alt="">
+                        <img class="animated" src="{{asset($slider->slider_image)}}" alt="">
                     </div>
                 </div>
             </div>

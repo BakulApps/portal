@@ -11,10 +11,10 @@
     <title>{{$title}}</title>
 
     <link rel="shortcut icon" type="image/x-icon" href="{{$favicon}}">
-    <link rel="stylesheet" href="{{asset('assets/fronted/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/fronted/css/icons.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/fronted/css/plugins.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/fronted/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/frontend/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/frontend/css/icons.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/frontend/css/plugins.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/frontend/css/style.css')}}">
 
-    <script src="{{asset('assets/fronted/js/vendor/modernizr-2.8.3.min.js')}}"></script>
+    <script src="{{asset('assets/frontend/js/vendor/modernizr-2.8.3.min.js')}}"></script>
 </head>
